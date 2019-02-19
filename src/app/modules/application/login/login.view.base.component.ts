@@ -16,7 +16,7 @@ import { AuthenticationService } from '@src/app/core/auth/authentication.service
 })
 export class LoginViewBaseComponent implements OnInit, AfterViewInit, OnDestroy {
     public $config: any = {
-        title: 'Login'
+        title: 'ACME Claims'
     };
 
     public $loginForm: FormGroup;

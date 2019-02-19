@@ -277,7 +277,7 @@
     "resizable": false,
     "schemaVersion": "1.0",
     "sortable": false,
-    "title": "<Title>",
+    "title": "Manage Claims",
     "type": "view",
     "uniqueID": "5fa5bcc2-5ae5-4385-ae18-4c435e127cad",
     "viewType": "data-grid"

@@ -2,3 +2,13 @@
 * Add your custom code here.
 * This file and any changes you make to it are preserved every time the app is generated.
 */
+
+@font-face {
+    font-family: "Nunito-Regular";
+    src: url("/assets/Nunito-Regular.ttf");
+}
+
+body {
+    font-family: Nunito-Regular;
+    background: linear-gradient(141deg, #4b4e56 0%, #656a75 51%, #494e58 75%);
+}

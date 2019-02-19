@@ -99,7 +99,7 @@
       "views": {
         "Approval": {
           "label": "Approval",
-          "title": "<Title>",
+          "title": "Manage Claims",
           "columns": {
             "name": "Name",
             "date": "Date",
