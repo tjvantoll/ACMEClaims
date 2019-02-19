@@ -1,0 +1,37 @@
+{
+    "authorization": {
+        "roles": []
+    },
+    "build": {
+        "debug": {
+            "baseHref": "/"
+        },
+        "release": {
+            "aot": true,
+            "baseHref": "/"
+        }
+    },
+    "children": [],
+    "defaultLangaugeCulture": "en-US",
+    "defaultLanguageLabel": "English",
+    "description": "",
+    "layout": {},
+    "mobileNavigation": [
+        {
+            "module": "Application",
+            "view": "home",
+            "displayName": "home",
+            "type": "tab"
+        }
+    ],
+    "mobileTheme": "light",
+    "name": "ACMEClaims",
+    "ripple": false,
+    "schemaVersion": "1.0.0",
+    "startupViewInfo": {},
+    "targetFramework": "AngularWebAndMobile",
+    "theme": "metro",
+    "type": "app",
+    "uniqueID": "93091c72-6dd9-4814-bfff-50a4b0315a56",
+    "webNavigation": []
+}

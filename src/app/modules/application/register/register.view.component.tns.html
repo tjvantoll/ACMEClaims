@@ -1,0 +1,28 @@
+<!--
+Auto-generated
+Do not edit!!!
+-->
+<ScrollView>
+  <GridLayout ksHideNavBar>
+    <ScrollView>
+      <FlexboxLayout class="form">
+        <StackLayout>
+          <Image class="logo" src="~/resources/logo_default_login.png"></Image>
+          <Label text="&lt;Title&gt;"></Label>
+          <Label text="Email"></Label>
+          <TextField autocorrect="false" autocapitalizationType="none" [(ngModel)]="user.email" keyboardType="email" returnKeyType="next" (returnPress)="focusUsername()"></TextField>
+          <Label text="Username"></Label>
+          <TextField #username autocorrect="false" autocapitalizationType="none" [(ngModel)]="user.username" returnKeyType="next" (returnPress)="focusPassword()"></TextField>
+          <Label text="Password"></Label>
+          <TextField #password secure="true" [(ngModel)]="user.password" returnKeyType="next" (returnPress)="focusConfirmPassword()"></TextField>
+          <Label text="Confirm Password"></Label>
+          <TextField #confirmPassword secure="true" [(ngModel)]="user.confirmPassword" returnKeyType="done"></TextField>
+
+          <Button text="Register" (tap)="submit()" class="-primary"></Button>
+          <Label text="or" horizontalAlignment="center" class="form__button-separator"></Label>
+          <Button text="Back to Log In" (tap)="backToLogin()" class="-outline"></Button>
+        </StackLayout>
+      </FlexboxLayout>
+    </ScrollView>
+  </GridLayout>
+</ScrollView>

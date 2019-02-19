@@ -1,0 +1,18 @@
+{
+    "authorization": {
+        "allowedRoles": []
+    },
+    "children": [],
+    "description": "",
+    "moduleType": "default",
+    "name": "Claims",
+    "order": 1,
+    "schemaVersion": "1.0",
+    "thumbnail": {
+        "background": "#00a2e8",
+        "color": "#ffffff",
+        "icon": "fa-area-chart"
+    },
+    "type": "module",
+    "uniqueID": "79a5106e-878e-4799-8087-36a580253e63"
+}

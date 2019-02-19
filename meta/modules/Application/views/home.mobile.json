@@ -1,0 +1,133 @@
+{
+    "actionBar": true,
+    "actionBarTitle": "",
+    "annotations": {
+        "dataSources": {
+            "name": "dataSourceName"
+        }
+    },
+    "authorization": {
+        "allowedRoles": []
+    },
+    "children": [
+        {
+            "absoluteLayout": {},
+            "appearanceStyles": {
+                "backgroundColor": null,
+                "color": null
+            },
+            "children": [
+                {
+                    "absoluteLayout": {},
+                    "appearanceStyles": {
+                        "backgroundColor": null,
+                        "color": null
+                    },
+                    "children": [
+                        {
+                            "absoluteLayout": {},
+                            "appearanceStyles": {
+                                "backgroundColor": null,
+                                "color": null
+                            },
+                            "classList": "h2",
+                            "dockLayout": {},
+                            "flexboxLayout": {
+                                "alignSelf": "stretch",
+                                "flexWrapBefore": false
+                            },
+                            "gridLayout": {
+                                "col": null,
+                                "colSpan": null,
+                                "row": null,
+                                "rowSpan": null
+                            },
+                            "id": "mobilelabel0",
+                            "platform": "mobile",
+                            "schemaVersion": "1.0",
+                            "text": "Welcome to Kinvey Studio!",
+                            "textWrap": false,
+                            "type": "mobile-label",
+                            "uniqueID": "9fc4d9d7-0fc2-4f1d-a5ba-a6c876e999c6"
+                        },
+                        {
+                            "absoluteLayout": {},
+                            "appearanceStyles": {
+                                "backgroundColor": null,
+                                "color": null
+                            },
+                            "classList": "h3",
+                            "dockLayout": {},
+                            "flexboxLayout": {
+                                "alignSelf": "stretch",
+                                "flexWrapBefore": false
+                            },
+                            "gridLayout": {
+                                "col": null,
+                                "colSpan": null,
+                                "row": null,
+                                "rowSpan": null
+                            },
+                            "id": "mobilelabel1",
+                            "platform": "mobile",
+                            "schemaVersion": "1.0",
+                            "text": "Get native performance and UX for iOS, Android and Web apps from a single cross-platform Angular code base.",
+                            "textWrap": true,
+                            "type": "mobile-label",
+                            "uniqueID": "4a8ad628-083d-4925-98f9-41d07dd513ea"
+                        }
+                    ],
+                    "classList": "",
+                    "dockLayout": {},
+                    "flexboxLayout": {
+                        "alignSelf": "stretch",
+                        "flexWrapBefore": false
+                    },
+                    "gridLayout": {
+                        "col": null,
+                        "colSpan": null,
+                        "row": null,
+                        "rowSpan": null
+                    },
+                    "id": "mobilestacklayout0",
+                    "orientation": "Vertical",
+                    "platform": "mobile",
+                    "schemaVersion": "1.0",
+                    "type": "mobile-stack-layout",
+                    "uniqueID": "e7d3c8f0-9a56-4fad-8bf3-bbb58ac17f25"
+                }
+            ],
+            "classList": "",
+            "dockLayout": {},
+            "flexboxLayout": {
+                "alignSelf": "stretch",
+                "flexWrapBefore": false
+            },
+            "gridLayout": {
+                "col": null,
+                "colSpan": null,
+                "row": null,
+                "rowSpan": null
+            },
+            "id": "mobilescrollview0",
+            "orientation": "Vertical",
+            "platform": "mobile",
+            "schemaVersion": "1.0",
+            "type": "mobile-scroll-view",
+            "uniqueID": "2b69cab5-2d99-4e3d-9e9e-e831f0f5f78f"
+        }
+    ],
+    "dataSources": [],
+    "events": {
+        "hideEventHandler": "onHide",
+        "initEventHandler": "onInit",
+        "showEventHandler": "onShow"
+    },
+    "hidden": false,
+    "name": "home",
+    "platform": "mobile",
+    "schemaVersion": "1.0",
+    "type": "view",
+    "uniqueID": "6c30260a-35be-47b3-9260-1c54cdf13020",
+    "viewType": "mobile-blank"
+}

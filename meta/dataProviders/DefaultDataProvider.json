@@ -1,0 +1,134 @@
+{
+    "authentication": {
+        "mobile": {
+            "authenticationType": "kinvey-auth",
+            "settings": {}
+        },
+        "web": {
+            "authenticationType": "kinvey-auth",
+            "settings": {}
+        }
+    },
+    "children": [
+        {
+            "clientSideProcessing": false,
+            "collection": "Claims",
+            "excludedFields": [
+                {
+                    "editorType": "text-input",
+                    "fieldType": "object",
+                    "fields": [
+                        {
+                            "editorType": "text-input",
+                            "fieldType": "string",
+                            "label": "Creator",
+                            "name": "creator",
+                            "required": false
+                        }
+                    ],
+                    "label": "Acl",
+                    "name": "_acl",
+                    "required": false
+                },
+                {
+                    "editorType": "text-input",
+                    "fieldType": "object",
+                    "fields": [
+                        {
+                            "editorType": "date-input",
+                            "fieldType": "date",
+                            "label": "Lmt",
+                            "name": "lmt",
+                            "required": false
+                        },
+                        {
+                            "editorType": "date-input",
+                            "fieldType": "date",
+                            "label": "Ect",
+                            "name": "ect",
+                            "required": false
+                        }
+                    ],
+                    "label": "Kmd",
+                    "name": "_kmd",
+                    "required": false
+                }
+            ],
+            "fields": [
+                {
+                    "editorType": "text-input",
+                    "fieldType": "string",
+                    "label": "Id",
+                    "name": "_id",
+                    "required": false
+                },
+                {
+                    "editorType": "text-input",
+                    "fieldType": "string",
+                    "label": "Name",
+                    "name": "name",
+                    "required": false
+                },
+                {
+                    "editorType": "date-input",
+                    "fieldType": "date",
+                    "label": "Date",
+                    "name": "date",
+                    "required": false
+                },
+                {
+                    "editorType": "text-input",
+                    "fieldType": "string",
+                    "label": "Vehicle",
+                    "name": "vehicle",
+                    "required": false
+                },
+                {
+                    "editorType": "text-input",
+                    "fieldType": "string",
+                    "label": "Image",
+                    "name": "image",
+                    "required": false
+                },
+                {
+                    "editorType": "text-input",
+                    "fieldType": "string",
+                    "label": "Description",
+                    "name": "description",
+                    "required": false
+                },
+                {
+                    "editorType": "text-input",
+                    "fieldType": "string",
+                    "label": "Policynumber",
+                    "name": "policynumber",
+                    "required": false
+                },
+                {
+                    "editorType": "text-input",
+                    "fieldType": "string",
+                    "label": "Type",
+                    "name": "type",
+                    "required": false
+                }
+            ],
+            "name": "Claims"
+        }
+    ],
+    "kinveyApp": {
+        "id": "f0a740bdad9b4567a0bf0a4d3a060d56",
+        "name": "ACMEClaims"
+    },
+    "kinveyAppEnvironment": {
+        "appSecret": "a30bf7812a974909b97ddfe00020db92",
+        "id": "kid_B1aeOjYrV",
+        "instanceId": "",
+        "masterSecret": "03dca2fbddd04ae6af1be4ed8c188d85",
+        "name": "Development"
+    },
+    "name": "DefaultDataProvider",
+    "schemaVersion": "1.0",
+    "serviceUri": "https://baas.kinvey.com",
+    "type": "kinvey-data-provider",
+    "uniqueID": "d63f092f-20a5-4618-9548-5291832a79be"
+}

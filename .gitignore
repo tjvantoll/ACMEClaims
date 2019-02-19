@@ -1,0 +1,5 @@
+/dist
+/hooks
+/node_modules
+/platforms
+/src/**/*.js
