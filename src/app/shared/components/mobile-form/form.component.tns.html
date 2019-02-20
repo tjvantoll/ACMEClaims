@@ -3,15 +3,15 @@ Auto-generated
 Do not edit!!!
 -->
 <GridLayout columns="*" rows="*, 120">
-  <ScrollView>
-    <GridLayout row="0" col="0" [columns]="columns" [rows]="rows" #form>
-      <ng-content></ng-content>
-    </GridLayout>
-  </ScrollView>
-  <StackLayout row="1" col="0">
-    <Button *ngIf="isRootForm" [isEnabled]="!isSubmitting" text="Submit" (tap)="onSubmit()"></Button>
-    <Button *ngIf="isRootForm" [isEnabled]="!isSubmitting" text="Cancel" (tap)="onCancel()"></Button>
-  </StackLayout>
+    <ScrollView>
+        <GridLayout row="0" col="0" [columns]="columns" [rows]="rows" #form>
+            <ng-content></ng-content>
+        </GridLayout>
+    </ScrollView>
+    <StackLayout row="1" col="0">
+        <Button *ngIf="isRootForm" [isEnabled]="!isSubmitting" text="Submit" (tap)="onSubmit()"></Button>
+        <Button *ngIf="isRootForm" [isEnabled]="!isSubmitting" text="Cancel" (tap)="onCancel()"></Button>
+    </StackLayout>
 
-  <ActivityIndicator *ngIf="isSubmitting" row="1" col="0" [busy]="true"></ActivityIndicator>
+    <ActivityIndicator *ngIf="isSubmitting" row="1" col="0" [busy]="true"></ActivityIndicator>
 </GridLayout>

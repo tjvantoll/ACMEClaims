@@ -26,22 +26,14 @@ export class ActionBarControllerDirective implements OnInit {
 
     ngOnInit(): void {
         this.page.actionBarHidden = false;
+        this.setupAndroidBackPress();
 
-        if (!this.canGoBack()) {
-            this.addSideButton();
-        } else {
+        if (this.canGoBack()) {
             this.addNavButton();
+            return;
         }
 
-        if (isAndroid) {
-            app.android.on(app.AndroidApplication.activityBackPressedEvent, (args: any) => {
-                args.cancel = true;
-
-                if (this.canGoBack()) {
-                    this.goBack();
-                }
-            });
-        }
+        this.addSideButton();
     }
 
     private addNavButton() {
@@ -63,7 +55,7 @@ export class ActionBarControllerDirective implements OnInit {
     }
 
     private addSideButton() {
-        if (!this.sideDrawerService.hasSideDrawer) {
+        if (!this.sideDrawerService.isEnabled) {
             return;
         }
 
@@ -81,7 +73,7 @@ export class ActionBarControllerDirective implements OnInit {
             actionBar.actionItems.addItem(btn);
         }
 
-        btn.on('tap', () => this.sideDrawerService.show());
+        btn.on('tap', () => this.sideDrawerService.open());
     }
 
     private canGoBack(activatedRoute: ActivatedRoute = this.activatedRoute) {
@@ -90,5 +82,17 @@ export class ActionBarControllerDirective implements OnInit {
 
     private goBack(activatedRoute: ActivatedRoute = this.activatedRoute) {
         return this.navigationService.goBack(activatedRoute);
+    }
+
+    private setupAndroidBackPress(): void {
+        if (isAndroid) {
+            app.android.on(app.AndroidApplication.activityBackPressedEvent, (args: any) => {
+                args.cancel = true;
+
+                if (this.canGoBack()) {
+                    this.goBack();
+                }
+            });
+        }
     }
 }

@@ -2,20 +2,14 @@
 Auto-generated
 Do not edit!!!
 -->
+<RadSideDrawer [gesturesEnabled]="sideDrawerGesturesEnabled" ios:class="-ios" android:class="-android">
+    <ScrollView tkDrawerContent>
+        <GridLayout>
+            <StackLayout>
+                <Button text="Logout" class="fa" (tap)="logout()"></Button>
+            </StackLayout>
+        </GridLayout>
+    </ScrollView>
 
-<RadSideDrawer [gesturesEnabled]="true" ios:class="-ios" android:class="-android">
-  <ScrollView tkDrawerContent>
-    <GridLayout>
-      <StackLayout>
-        <Button text="logout" class="fa" (tap)="logout()"></Button>
-      </StackLayout>
-    </GridLayout>
-  </ScrollView>
-
-  <GridLayout tkMainContent>
-    <TabView androidTabsPosition="bottom" class="fa">
-      <page-router-outlet *tabItem="{ title: 'home', textTransform: 'none' }" name="applicationHomeTab"></page-router-outlet>
-    </TabView>
-  </GridLayout>
-
+    <page-router-outlet tkMainContent></page-router-outlet>
 </RadSideDrawer>

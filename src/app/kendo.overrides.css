@@ -10,22 +10,22 @@
 .k-datepicker,
 .k-timepicker,
 .k-slider-horizontal {
-  width: 100%;
+    width: 100%;
 }
 
 ks-date-time-picker>span {
-  display: flex;
+    display: flex;
 }
 
 ks-date-time-picker .k-datepicker,
 ks-date-time-picker .k-timepicker {
-  flex: 1;
+    flex: 1;
 }
 
 textarea[rows] {
-  height: auto;
+    height: auto;
 }
 
 ks-image img {
-  max-width: 100%;
+    max-width: 100%;
 }

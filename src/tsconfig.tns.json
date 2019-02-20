@@ -1,19 +1,19 @@
 {
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "module": "es2015",
-    "moduleResolution": "node",
-    "paths": {
-      "@src/*": [
-        "src/*.android.ts",
-        "src/*.ios.ts",
-        "src/*.tns.ts",
-        "src/*"
-      ]
-    }
-  },
-  "files": [
-    "main.tns.ts",
-    "app/modules/application/application.module.tns.ts", "app/modules/claims/claims.module.tns.ts"
-  ]
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "module": "es2015",
+        "moduleResolution": "node",
+        "paths": {
+            "@src/*": [
+                "src/*.android.ts",
+                "src/*.ios.ts",
+                "src/*.tns.ts",
+                "src/*"
+            ]
+        }
+    },
+    "files": [
+        "main.tns.ts",
+        "app/modules/application/application.module.tns.ts", "app/modules/claims/claims.module.tns.ts"
+    ]
 }

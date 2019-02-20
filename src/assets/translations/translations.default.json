@@ -74,7 +74,11 @@
       "views": {
         "app-layout": {
           "label": "app-layout",
-          "components": {}
+          "components": {
+            "label0": {
+              "text": "ACME Claims"
+            }
+          }
         },
         "home": {
           "label": "home"

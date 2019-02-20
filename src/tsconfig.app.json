@@ -1,21 +1,21 @@
 {
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "./out-tsc/app",
-    "module": "es2015",
-    "types": [
-      "node"
-    ],
-    "paths": {
-      "@src/*": [
-        "src/*.web.ts",
-        "src/*"
-      ]
-    }
-  },
-  "files": [
-    "main.ts",
-    "polyfills.ts",
-    "app/modules/application/application.module.ts", "app/modules/claims/claims.module.ts"
-  ]
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./out-tsc/app",
+        "module": "es2015",
+        "types": [
+            "node"
+        ],
+        "paths": {
+            "@src/*": [
+                "src/*.web.ts",
+                "src/*"
+            ]
+        }
+    },
+    "files": [
+        "main.ts",
+        "polyfills.ts",
+        "app/modules/application/application.module.ts", "app/modules/claims/claims.module.ts"
+    ]
 }

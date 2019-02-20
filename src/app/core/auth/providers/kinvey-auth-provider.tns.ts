@@ -6,6 +6,7 @@ import { Injector } from '@angular/core';
 
 import { Observable, of, from } from 'rxjs';
 import { Kinvey, InvalidCredentialsError, NoActiveUserError } from 'kinvey-nativescript-sdk';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 import { AuthenticationProvider } from '@src/app/core/auth/providers/authentication-provider';
 
@@ -16,17 +17,26 @@ class User {
 }
 
 export class KinveyAuthProvider extends AuthenticationProvider<User> {
+    private routerExtensions: RouterExtensions;
+
     protected get sessionKey(): string {
         return 'kinvey.auth.' + this.settings.sessionKey;
     }
 
     constructor(settings: any, injector: Injector) {
         super(settings, injector);
+
+        this.routerExtensions = injector.get(RouterExtensions);
+
         Kinvey.init();
     }
 
     isAuthenticated(): Observable<boolean> {
         return of(!!Kinvey.User.getActiveUser());
+    }
+
+    authenticate(): void {
+        this.routerExtensions.navigate(['application', 'login'], { clearHistory: true });
     }
 
     signIn({ username, password }): Observable<any> {

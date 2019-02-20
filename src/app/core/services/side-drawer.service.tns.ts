@@ -2,30 +2,49 @@
 // Auto-generated
 // Do not edit!!!
 ///////////////////
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter, map } from 'rxjs/operators';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 
 @Injectable()
 export class SideDrawerService {
     private sideDrawer: RadSideDrawer;
+    private forceDisable: boolean = false;
+    private enableDrawerForRoute: boolean = false;
 
-    public get hasSideDrawer(): boolean {
-        return !!this.sideDrawer;
+    get isEnabled(): boolean {
+        return !this.forceDisable && this.enableDrawerForRoute && !!this.sideDrawer;
     }
 
-    public init(sideDrawer: RadSideDrawer): void {
+    constructor(router: Router, zone: NgZone) {
+        this.listenForDefaultRoute(router, zone);
+    }
+
+    initialize(sideDrawer: RadSideDrawer): void {
         this.sideDrawer = sideDrawer;
     }
 
-    public show(): void {
-        if (this.hasSideDrawer) {
+    open(): void {
+        if (this.isEnabled) {
             this.sideDrawer.showDrawer();
         }
     }
 
-    public close(): void {
-        if (this.hasSideDrawer) {
+    close(): void {
+        if (this.isEnabled) {
             this.sideDrawer.closeDrawer();
         }
+    }
+
+    private listenForDefaultRoute(router: Router, zone: NgZone): void {
+        router.events
+            .pipe(
+                filter(event => event instanceof NavigationEnd),
+                map(() => router.routerState.root.firstChild.snapshot.data)
+            )
+            .subscribe(({ enableDrawer } = {}) => {
+                zone.run(() => (this.enableDrawerForRoute = !!enableDrawer));
+            });
     }
 }

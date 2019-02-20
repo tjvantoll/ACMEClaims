@@ -37,10 +37,9 @@ export class AppLayoutViewBaseComponent implements OnInit, AfterViewInit, OnDest
                 navigateUrl: '/',
                 alt: ''
             },
-            languagesDdl: {
-                data: this.getLanguages(),
-                textField: 'label',
-                valueField: 'key'
+            label0: {
+                forAttribute: '',
+                textKey: 'modules.Application.views.app-layout.components.label0.text'
             },
             userdropdown0: {},
             navigationpanelbar0: {}

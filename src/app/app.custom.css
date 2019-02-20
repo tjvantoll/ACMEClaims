@@ -13,3 +13,24 @@ body {
     background: linear-gradient(141deg, #4b4e56 0%, #656a75 51%, #494e58 75%);
     color: white;
 }
+
+.ks-header {
+    background-color: #656a75;
+    color: white;
+    box-shadow: none;
+}
+.ks-logo img {
+    height: 35px;
+    position: relative;
+    top: 2px;
+}
+ks-label {
+    font-size: 1.5em;
+    position: relative;
+    left: -3.1em;
+    top: 0.2em;
+}
+.k-panelbar {
+    border-top-width: 0;
+    border-right-color: lightgray;
+}

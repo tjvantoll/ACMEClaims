@@ -3,92 +3,92 @@ Auto-generated
 Do not edit!!!
 -->
 <div class="ks-data-grid">
-  <div class="row">
-    <div class="col-12">
-      <ks-top-section></ks-top-section>
+    <div class="row">
+        <div class="col-12">
+            <ks-top-section></ks-top-section>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <h2>{{ $config.titleKey | translate }}</h2>
+    <div class="row">
+        <div class="col-12">
+            <h2>{{ $config.titleKey | translate }}</h2>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <ks-middle-section></ks-middle-section>
+    <div class="row">
+        <div class="col-12">
+            <ks-middle-section></ks-middle-section>
+        </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-12">
-      <ks-grid #grid [config]="$config.components.grid" [dataService]="$dataServices['Claims']" [state]="$dataServicesState['Claims']" [view]="$dataServicesResult['Claims']">
-        <kendo-grid [pageable]="grid.config.pageable" [sortable]="grid.config.sortable" [filterable]="grid.config.filterable" [groupable]="grid.config.groupable"
-          [data]="grid.view | async" [pageSize]="grid.state.take" [skip]="grid.state.skip" [sort]="grid.state.sort" [filter]="grid.state.filter"
-          [group]="grid.state.group" [loading]="grid.dataService.pendingData" (dataStateChange)="grid.dataStateChange($event)" (edit)="grid.editHandler($event)"
-          (cancel)="grid.cancelHandler($event)" (save)="grid.saveHandler($event)" (remove)="grid.removeHandler($event)" (add)="grid.addHandler($event)"
-          kendoGridSelectBy [selectedKeys]="grid.selectedKeys" [selectable]="{ mode: 'single' }" (selectionChange)="grid.selectionChange($event)"
-          [resizable]="grid.config.resizable" [reorderable]="grid.config.reorderable">
-          <ng-template kendoGridToolbarTemplate>
-            <button kendoGridAddCommand><span class="k-icon k-i-add"></span>{{ 'modules.Claims.views.Approval.editMessages.create' | translate }}</button>
-          </ng-template>
-          <kendo-grid-column [field]="'name'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.name' | translate">
-            <ng-template kendoGridEditTemplate let-dataItem="dataItem">
-              <ks-text-box [config]="$config.components.ctl1" [id]="'ctl1'" [(model)]="grid.editDataModel.name" [viewFormArray]="grid.viewFormArray">
-              </ks-text-box>
-            </ng-template>
-          </kendo-grid-column>
-          <kendo-grid-column [field]="'date'" [filterable]="true" [filter]="'date'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.date' | translate">
-            <ng-template kendoGridEditTemplate let-dataItem="dataItem">
-              <ks-date-picker [config]="$config.components.ctl2" [id]="'ctl2'" [(model)]="grid.editDataModel.date" [viewFormArray]="grid.viewFormArray">
-              </ks-date-picker>
-            </ng-template>
-          </kendo-grid-column>
-          <kendo-grid-column [field]="'vehicle'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.vehicle' | translate">
-            <ng-template kendoGridEditTemplate let-dataItem="dataItem">
-              <ks-text-box [config]="$config.components.ctl3" [id]="'ctl3'" [(model)]="grid.editDataModel.vehicle" [viewFormArray]="grid.viewFormArray">
-              </ks-text-box>
-            </ng-template>
-          </kendo-grid-column>
-          <kendo-grid-column [field]="'image'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.image' | translate">
-            <ng-template kendoGridEditTemplate let-dataItem="dataItem">
-              <ks-text-box [config]="$config.components.ctl4" [id]="'ctl4'" [(model)]="grid.editDataModel.image" [viewFormArray]="grid.viewFormArray">
-              </ks-text-box>
-            </ng-template>
-          </kendo-grid-column>
-          <kendo-grid-column [field]="'description'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.description' | translate">
-            <ng-template kendoGridEditTemplate let-dataItem="dataItem">
-              <ks-text-box [config]="$config.components.ctl5" [id]="'ctl5'" [(model)]="grid.editDataModel.description" [viewFormArray]="grid.viewFormArray">
-              </ks-text-box>
-            </ng-template>
-          </kendo-grid-column>
-          <kendo-grid-column [field]="'policynumber'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.policynumber' | translate">
-            <ng-template kendoGridEditTemplate let-dataItem="dataItem">
-              <ks-text-box [config]="$config.components.ctl6" [id]="'ctl6'" [(model)]="grid.editDataModel.policynumber" [viewFormArray]="grid.viewFormArray">
-              </ks-text-box>
-            </ng-template>
-          </kendo-grid-column>
-          <kendo-grid-column [field]="'type'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.type' | translate">
-            <ng-template kendoGridEditTemplate let-dataItem="dataItem">
-              <ks-text-box [config]="$config.components.ctl7" [id]="'ctl7'" [(model)]="grid.editDataModel.type" [viewFormArray]="grid.viewFormArray">
-              </ks-text-box>
-            </ng-template>
-          </kendo-grid-column>
-          <kendo-grid-command-column [width]="grid.config.commandColumnWidth">
-            <ng-template kendoGridCellTemplate>
-              <button kendoGridEditCommand><span class="k-icon k-i-edit"></span>{{ 'modules.Claims.views.Approval.editMessages.edit' | translate }}</button>
-              <button kendoGridSaveCommand><span class="k-icon k-i-checkmark"></span>{{ 'modules.Claims.views.Approval.editMessages.update' | translate }}</button>
-              <button kendoGridCancelCommand><span class="k-icon k-i-cancel"></span>{{ 'modules.Claims.views.Approval.editMessages.canceledit' | translate }}</button>
-              <button kendoGridRemoveCommand><span class="k-icon k-i-close"></span>{{ 'modules.Claims.views.Approval.editMessages.destroy' | translate }}</button>
-            </ng-template>
-          </kendo-grid-command-column>
-          </kendo-grid>
-      </ks-grid>
+    <div class="row">
+        <div class="col-12">
+            <ks-grid #grid [config]="$config.components.grid" [dataService]="$dataServices['Claims']" [state]="$dataServicesState['Claims']" [view]="$dataServicesResult['Claims']">
+                <kendo-grid [pageable]="grid.config.pageable" [sortable]="grid.config.sortable" [filterable]="grid.config.filterable" [groupable]="grid.config.groupable"
+                    [data]="grid.view | async" [pageSize]="grid.state.take" [skip]="grid.state.skip" [sort]="grid.state.sort" [filter]="grid.state.filter"
+                    [group]="grid.state.group" [loading]="grid.dataService.pendingData" (dataStateChange)="grid.dataStateChange($event)" (edit)="grid.editHandler($event)"
+                    (cancel)="grid.cancelHandler($event)" (save)="grid.saveHandler($event)" (remove)="grid.removeHandler($event)" (add)="grid.addHandler($event)"
+                    kendoGridSelectBy [selectedKeys]="grid.selectedKeys" [selectable]="{ mode: 'single' }" (selectionChange)="grid.selectionChange($event)"
+                    [resizable]="grid.config.resizable" [reorderable]="grid.config.reorderable">
+                    <ng-template kendoGridToolbarTemplate>
+                        <button kendoGridAddCommand><span class="k-icon k-i-add"></span>{{ 'modules.Claims.views.Approval.editMessages.create' | translate }}</button>
+                    </ng-template>
+                    <kendo-grid-column [field]="'name'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.name' | translate">
+                        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                            <ks-text-box [config]="$config.components.ctl1" [id]="'ctl1'" [(model)]="grid.editDataModel.name" [viewFormArray]="grid.viewFormArray">
+                            </ks-text-box>
+                        </ng-template>
+                    </kendo-grid-column>
+                    <kendo-grid-column [field]="'date'" [filterable]="true" [filter]="'date'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.date' | translate">
+                        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                            <ks-date-picker [config]="$config.components.ctl2" [id]="'ctl2'" [(model)]="grid.editDataModel.date" [viewFormArray]="grid.viewFormArray">
+                            </ks-date-picker>
+                        </ng-template>
+                    </kendo-grid-column>
+                    <kendo-grid-column [field]="'vehicle'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.vehicle' | translate">
+                        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                            <ks-text-box [config]="$config.components.ctl3" [id]="'ctl3'" [(model)]="grid.editDataModel.vehicle" [viewFormArray]="grid.viewFormArray">
+                            </ks-text-box>
+                        </ng-template>
+                    </kendo-grid-column>
+                    <kendo-grid-column [field]="'image'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.image' | translate">
+                        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                            <ks-text-box [config]="$config.components.ctl4" [id]="'ctl4'" [(model)]="grid.editDataModel.image" [viewFormArray]="grid.viewFormArray">
+                            </ks-text-box>
+                        </ng-template>
+                    </kendo-grid-column>
+                    <kendo-grid-column [field]="'description'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.description' | translate">
+                        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                            <ks-text-box [config]="$config.components.ctl5" [id]="'ctl5'" [(model)]="grid.editDataModel.description" [viewFormArray]="grid.viewFormArray">
+                            </ks-text-box>
+                        </ng-template>
+                    </kendo-grid-column>
+                    <kendo-grid-column [field]="'policynumber'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.policynumber' | translate">
+                        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                            <ks-text-box [config]="$config.components.ctl6" [id]="'ctl6'" [(model)]="grid.editDataModel.policynumber" [viewFormArray]="grid.viewFormArray">
+                            </ks-text-box>
+                        </ng-template>
+                    </kendo-grid-column>
+                    <kendo-grid-column [field]="'type'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.type' | translate">
+                        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                            <ks-text-box [config]="$config.components.ctl7" [id]="'ctl7'" [(model)]="grid.editDataModel.type" [viewFormArray]="grid.viewFormArray">
+                            </ks-text-box>
+                        </ng-template>
+                    </kendo-grid-column>
+                    <kendo-grid-command-column [width]="grid.config.commandColumnWidth">
+                        <ng-template kendoGridCellTemplate>
+                            <button kendoGridEditCommand><span class="k-icon k-i-edit"></span>{{ 'modules.Claims.views.Approval.editMessages.edit' | translate }}</button>
+                            <button kendoGridSaveCommand><span class="k-icon k-i-checkmark"></span>{{ 'modules.Claims.views.Approval.editMessages.update' | translate }}</button>
+                            <button kendoGridCancelCommand><span class="k-icon k-i-cancel"></span>{{ 'modules.Claims.views.Approval.editMessages.canceledit' | translate }}</button>
+                            <button kendoGridRemoveCommand><span class="k-icon k-i-close"></span>{{ 'modules.Claims.views.Approval.editMessages.destroy' | translate }}</button>
+                        </ng-template>
+                    </kendo-grid-command-column>
+                    </kendo-grid>
+            </ks-grid>
+        </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-12">
-      <ks-bottom-section></ks-bottom-section>
+    <div class="row">
+        <div class="col-12">
+            <ks-bottom-section></ks-bottom-section>
+        </div>
     </div>
-  </div>
 </div>

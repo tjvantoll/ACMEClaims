@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
 import { NativeScriptRouterModule, NSEmptyOutletComponent } from 'nativescript-angular/router';
 import { AuthenticationGuardService } from '@src/app/core/auth/authentication-guard.service';
-import { AppComponent } from '@src/app/app.component';
+import { AppTabsComponent } from '@src/app/app-tabs.component';
 
 import { config } from '@src/app/app-routing.config';
 
@@ -14,7 +14,8 @@ const routes: Routes = [
     { path: '', redirectTo: '_app', pathMatch: 'full' },
     {
         path: '_app',
-        component: AppComponent,
+        data: { enableDrawer: true },
+        component: AppTabsComponent,
         canActivate: [AuthenticationGuardService],
         canActivateChild: [AuthenticationGuardService],
         children: [
