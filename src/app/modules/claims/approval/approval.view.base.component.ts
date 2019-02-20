@@ -38,7 +38,7 @@ export class ApprovalViewBaseComponent implements OnInit, AfterViewInit, OnDestr
     public $dataServicesState: { [key: string]: State } = {
         Claims: {
             skip: 0,
-            take: 20
+            take: 10
         }
     };
 
@@ -56,7 +56,7 @@ export class ApprovalViewBaseComponent implements OnInit, AfterViewInit, OnDestr
                 pageable: this.$dataServicesState['Claims'].take !== undefined,
                 reorderable: false,
                 resizable: false,
-                sortable: false,
+                sortable: true,
                 commandColumnWidth: 220,
                 editing: {
                     mode: 'Inline'
@@ -69,6 +69,13 @@ export class ApprovalViewBaseComponent implements OnInit, AfterViewInit, OnDestr
                 }
             },
 
+            ctl4: {
+                placeholderKey: 'modules.Claims.views.Approval.components.ctl4.placeholder',
+                name: 'image',
+                value: '',
+                title: 'Image',
+                debounce: 0
+            },
             ctl1: {
                 placeholderKey: 'modules.Claims.views.Approval.components.ctl1.placeholder',
                 name: 'name',
@@ -87,13 +94,6 @@ export class ApprovalViewBaseComponent implements OnInit, AfterViewInit, OnDestr
                 name: 'vehicle',
                 value: '',
                 title: 'Vehicle',
-                debounce: 0
-            },
-            ctl4: {
-                placeholderKey: 'modules.Claims.views.Approval.components.ctl4.placeholder',
-                name: 'image',
-                value: '',
-                title: 'Image',
                 debounce: 0
             },
             ctl5: {

@@ -105,12 +105,12 @@
           "label": "Approval",
           "title": "Manage Claims",
           "columns": {
+            "image": "Image",
             "name": "Name",
             "date": "Date",
             "vehicle": "Vehicle",
-            "image": "Image",
             "description": "Description",
-            "policynumber": "Policynumber",
+            "policynumber": "Policy Number",
             "type": "Type"
           },
           "editMessages": {
@@ -123,13 +123,13 @@
             "update": "Update"
           },
           "components": {
+            "ctl4": {
+              "placeholder": ""
+            },
             "ctl1": {
               "placeholder": ""
             },
             "ctl3": {
-              "placeholder": ""
-            },
-            "ctl4": {
               "placeholder": ""
             },
             "ctl5": {

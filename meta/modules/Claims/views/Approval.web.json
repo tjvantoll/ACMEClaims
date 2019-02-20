@@ -14,6 +14,37 @@
                 "events": {
                     "onChange": ""
                 },
+                "id": "ctl4",
+                "model": "",
+                "name": "image",
+                "placeholder": "",
+                "schemaVersion": "1.0",
+                "title": "Image",
+                "type": "text-box",
+                "uniqueID": "ca12ad4c-f9d2-42e6-a6dd-3dea13969247",
+                "validation": {
+                    "required": false
+                }
+            },
+            "editable": true,
+            "encoded": true,
+            "field": "image",
+            "filterable": true,
+            "format": "",
+            "sortable": true,
+            "template": "<ng-template kendoGridCellTemplate let-dataItem>\n    <img [src]=\"dataItem.image\" style=\"height: 85px;\">\n</ng-template>",
+            "title": "Image"
+        },
+        {
+            "componentOptions": {
+                "annotations": {
+                    "id": "componentIdentifier"
+                },
+                "debounce": 0,
+                "defaultValue": "",
+                "events": {
+                    "onChange": ""
+                },
                 "id": "ctl1",
                 "model": "",
                 "name": "name",
@@ -61,6 +92,7 @@
             "filterable": true,
             "format": "",
             "sortable": true,
+            "template": "<ng-template kendoGridCellTemplate let-dataItem>\n    <span>{{ (dataItem.date.getMonth() + 1) + ' / ' + dataItem.date.getDate() + ' / ' + dataItem.date.getFullYear() }}</span>\n</ng-template>",
             "title": "Date"
         },
         {
@@ -92,36 +124,6 @@
             "format": "",
             "sortable": true,
             "title": "Vehicle"
-        },
-        {
-            "componentOptions": {
-                "annotations": {
-                    "id": "componentIdentifier"
-                },
-                "debounce": 0,
-                "defaultValue": "",
-                "events": {
-                    "onChange": ""
-                },
-                "id": "ctl4",
-                "model": "",
-                "name": "image",
-                "placeholder": "",
-                "schemaVersion": "1.0",
-                "title": "Image",
-                "type": "text-box",
-                "uniqueID": "ca12ad4c-f9d2-42e6-a6dd-3dea13969247",
-                "validation": {
-                    "required": false
-                }
-            },
-            "editable": true,
-            "encoded": true,
-            "field": "image",
-            "filterable": true,
-            "format": "",
-            "sortable": true,
-            "title": "Image"
         },
         {
             "componentOptions": {
@@ -181,7 +183,7 @@
             "filterable": true,
             "format": "",
             "sortable": true,
-            "title": "Policynumber"
+            "title": "Policy Number"
         },
         {
             "componentOptions": {
@@ -224,7 +226,7 @@
     "editOptions": {
         "allowDelete": true,
         "allowEdit": true,
-        "allowInsert": true,
+        "allowInsert": false,
         "batch": true,
         "rowButtons": {
             "canceledit": {
@@ -271,12 +273,12 @@
     "groupable": false,
     "hidden": false,
     "name": "Approval",
-    "pageSize": 20,
+    "pageSize": 10,
     "platform": "web",
     "reorderable": false,
     "resizable": false,
     "schemaVersion": "1.0",
-    "sortable": false,
+    "sortable": true,
     "title": "Manage Claims",
     "type": "view",
     "uniqueID": "5fa5bcc2-5ae5-4385-ae18-4c435e127cad",
