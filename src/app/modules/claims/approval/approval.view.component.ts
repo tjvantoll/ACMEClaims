@@ -63,11 +63,11 @@ export class ApprovalViewComponent extends ApprovalViewBaseComponent {
                                     "<th colspan='2' style='font-family:Helvetica;font-weight:bold;font-size:22px;padding:10px'>Progress Claim Recommendation</th>" +
                                 "</tr>" +
                                 "<tr>" +
-                                    "<td style='font-family:Helvetica;font-size:18px;padding:10px'>Progress DataRPM Score:</td>" +
-                                    "<td style='font-family:Helvetica;font-size:18px;padding:10px;font-weight:bold'>1235/1500</td>" +
+                                    "<td style='font-family:Helvetica;font-size:18px;padding:10px'>Named Insured Insurance Score:</td>" +
+                                    "<td style='font-family:Helvetica;font-size:18px;padding:10px;font-weight:bold'>89/100</td>" +
                                 "</tr>" +
                                 "<tr>" +
-                                    "<td style='font-family:Helvetica;font-size:18px;padding:10px'>Progress Corticon Rules Recommendation:</td>" +
+                                    "<td style='font-family:Helvetica;font-size:18px;padding:10px'>Recommendation:</td>" +
                                     "<td style='font-family:Helvetica;font-size:18px;padding:10px;font-weight:bold;color:#2f7f16'>APPROVE</td>" +
                                 "</tr>" +
                                 "<tr>" +
