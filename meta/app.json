@@ -18,12 +18,6 @@
     "layout": {},
     "mobileNavigation": [
         {
-            "displayName": "Claims",
-            "module": "Claims",
-            "type": "tab",
-            "view": "Claims"
-        },
-        {
             "displayName": "Chat",
             "module": "Claims",
             "type": "tab",

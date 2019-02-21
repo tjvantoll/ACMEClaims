@@ -17,7 +17,6 @@ export class AppTabsComponent implements AfterViewInit {
 
     ngAfterViewInit(): void {
         const outlets = {
-            claimsClaimsTab: ['claims', 'claims'],
             claimsChatTab: ['claims', 'chat']
         };
 

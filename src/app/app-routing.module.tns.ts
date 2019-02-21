@@ -21,12 +21,6 @@ const routes: Routes = [
         children: [
             {
                 path: 'claims',
-                outlet: 'claimsClaimsTab',
-                component: NSEmptyOutletComponent,
-                loadChildren: '@src/app/modules/claims/claims.module#ClaimsModule'
-            },
-            {
-                path: 'claims',
                 outlet: 'claimsChatTab',
                 component: NSEmptyOutletComponent,
                 loadChildren: '@src/app/modules/claims/claims.module#ClaimsModule'

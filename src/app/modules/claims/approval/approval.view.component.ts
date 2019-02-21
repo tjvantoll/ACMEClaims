@@ -6,6 +6,8 @@ import { Inject, Injector } from '@angular/core';
 import { SelectionEvent } from '@progress/kendo-angular-grid';
 import { ApprovalViewBaseComponent } from '@src/app/modules/claims/approval/approval.view.base.component';
 
+declare var window: any;
+
 export class ApprovalViewComponent extends ApprovalViewBaseComponent {
     constructor(@Inject(Injector) injector: Injector) {
         super(injector);
@@ -15,7 +17,8 @@ export class ApprovalViewComponent extends ApprovalViewBaseComponent {
     public onInit(): void {
         //console.log("onInit");
 
-        let script = document.createElement("SCRIPT");
+        let script: any;
+        script = document.createElement("SCRIPT");
         script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js';
         script.type = 'text/javascript';
         script.onload = function() {
