@@ -30,7 +30,9 @@ Do not edit!!!
                     [reorderable]="grid.config.reorderable">
                     <kendo-grid-column [field]="'image'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.image' | translate">
                         <ng-template kendoGridCellTemplate let-dataItem>
-                            <img [src]="dataItem.image" style="height: 85px;">
+                            <a target="_blank" [href]="dataItem.image">
+                                <img class="car-image" [src]="dataItem.image" style="height: 85px;">
+                            </a>
                         </ng-template>
                         <ng-template kendoGridEditTemplate let-dataItem="dataItem">
                             <ks-text-box [config]="$config.components.ctl4" [id]="'ctl4'" [(model)]="grid.editDataModel.image" [viewFormArray]="grid.viewFormArray">

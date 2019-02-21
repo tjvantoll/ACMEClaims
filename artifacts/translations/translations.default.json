@@ -103,7 +103,7 @@
       "views": {
         "Approval": {
           "label": "Approval",
-          "title": "Manage Claims",
+          "title": "Approve and Deny Claims",
           "columns": {
             "image": "Image",
             "name": "Name",

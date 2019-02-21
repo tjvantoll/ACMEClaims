@@ -59,7 +59,7 @@ export class KSFormComponent implements OnInit, OnDestroy {
 
             if (x.formControlName) {
                 const formControlValidators = this.getValidators(x.formControlValidators ? x.formControlValidators.split(' ') : []);
-                formGroup.addControl(x.formControlName, new FormControl('', formControlValidators));
+                formGroup.addControl(x.formControlName, new FormControl(null, formControlValidators));
             }
         });
 
@@ -86,7 +86,7 @@ export class KSFormComponent implements OnInit, OnDestroy {
             .then(() => this.routerExtensions.back())
             .catch(err => {
                 this.isSubmitting = false;
-                alert(err);
+                alert((err && err.message) || 'An error has occurred.');
             });
     }
 

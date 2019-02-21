@@ -32,7 +32,7 @@
             "filterable": true,
             "format": "",
             "sortable": true,
-            "template": "<ng-template kendoGridCellTemplate let-dataItem>\n    <img [src]=\"dataItem.image\" style=\"height: 85px;\">\n</ng-template>",
+            "template": "<ng-template kendoGridCellTemplate let-dataItem>\n    <a target=\"_blank\" [href]=\"dataItem.image\">\n        <img class=\"car-image\" [src]=\"dataItem.image\" style=\"height: 85px;\">\n    </a>\n</ng-template>",
             "title": "Image"
         },
         {
@@ -279,7 +279,7 @@
     "resizable": false,
     "schemaVersion": "1.0",
     "sortable": true,
-    "title": "Manage Claims",
+    "title": "Approve and Deny Claims",
     "type": "view",
     "uniqueID": "5fa5bcc2-5ae5-4385-ae18-4c435e127cad",
     "viewType": "data-grid"

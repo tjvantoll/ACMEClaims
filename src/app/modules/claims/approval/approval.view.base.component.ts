@@ -47,7 +47,7 @@ export class ApprovalViewBaseComponent implements OnInit, AfterViewInit, OnDestr
     };
 
     public $config: any = {
-        title: 'Manage Claims',
+        title: 'Approve and Deny Claims',
         titleKey: 'modules.Claims.views.Approval.title',
         components: {
             grid: {
