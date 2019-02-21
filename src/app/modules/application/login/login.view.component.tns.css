@@ -1,4 +1,19 @@
-/*
-* Add your custom code here.
-* This file and any changes you make to it are preserved every time the app is generated.
-*/
+ScrollView {
+    background-color: #656a75;
+    color: white;
+    font-family: 'Nunito-Regular';
+}
+
+.form {
+    border-width: 1;
+    border-color: orange;
+}
+
+Label[text="ACME Claims"] {
+    color: #FFFFFF;
+    font-size: 28;
+    text-align: center;
+    margin-top: 20;
+    margin-bottom: 40;
+    font-weight: 300;
+}

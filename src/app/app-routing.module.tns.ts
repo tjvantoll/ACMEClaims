@@ -20,10 +20,16 @@ const routes: Routes = [
         canActivateChild: [AuthenticationGuardService],
         children: [
             {
-                path: 'application',
-                outlet: 'applicationHomeTab',
+                path: 'claims',
+                outlet: 'claimsClaimsTab',
                 component: NSEmptyOutletComponent,
-                loadChildren: '@src/app/modules/application/application.module#ApplicationModule'
+                loadChildren: '@src/app/modules/claims/claims.module#ClaimsModule'
+            },
+            {
+                path: 'claims',
+                outlet: 'claimsChatTab',
+                component: NSEmptyOutletComponent,
+                loadChildren: '@src/app/modules/claims/claims.module#ClaimsModule'
             }
         ]
     },

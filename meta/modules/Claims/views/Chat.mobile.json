@@ -1,0 +1,17 @@
+{
+    "authorization": {
+        "allowedRoles": []
+    },
+    "events": {
+        "hideEventHandler": "onHide",
+        "initEventHandler": "onInit",
+        "showEventHandler": "onShow"
+    },
+    "name": "Chat",
+    "nativeChatConfig": "{\n   \"bot\": {\n     \"id\": \"5c12b8dccd56814ee0ef2ec9\"\n   },\n   \"channel\": {\n     \"id\": \"9e11dd6b-6fb8-4bff-97f4-55acad3f4cca\",\n     \"token\": \"5dcabce2-7728-46ab-968a-7d679c64205a\"\n   },\n   \"googleApiKey\": \"<Paste your Google API key here!>\",\n   \"session\": {\n     \"clear\": true\n   }\n}",
+    "platform": "mobile",
+    "schemaVersion": "1.0",
+    "type": "view",
+    "uniqueID": "5c8dbaf0-72bc-42a9-bb6f-b265ce88e62d",
+    "viewType": "mobile-chat-view"
+}
