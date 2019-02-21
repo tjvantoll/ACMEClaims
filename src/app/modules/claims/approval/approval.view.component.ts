@@ -23,7 +23,7 @@ export class ApprovalViewComponent extends ApprovalViewBaseComponent {
             //setTimeout(function() { 
 
             var checkGrid = setInterval(function() {
-                if (document.querySelector(".k-grid-table")) {
+                if ($(".k-grid-table tr").length > 2) {
 
                     // load jqueryui
                     $.getScript('https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', function() {});
