@@ -17,15 +17,61 @@
                 {
                     "editorType": "text-input",
                     "fieldType": "object",
-                    "fields": [
-                        {
+                    "fields": {
+                        "0": {
+                            "_events": {
+                                "change": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ],
+                                "get": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            "_handlers": {},
                             "editorType": "text-input",
                             "fieldType": "string",
                             "label": "Creator",
                             "name": "creator",
-                            "required": false
-                        }
-                    ],
+                            "required": false,
+                            "uid": "f52b7ea5-9735-44b4-bcdb-699d549bb6c3"
+                        },
+                        "_events": {
+                            "change": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ],
+                            "get": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        "length": 1
+                    },
                     "label": "Acl",
                     "name": "_acl",
                     "required": false
@@ -33,22 +79,91 @@
                 {
                     "editorType": "text-input",
                     "fieldType": "object",
-                    "fields": [
-                        {
+                    "fields": {
+                        "0": {
+                            "_events": {
+                                "change": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ],
+                                "get": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            "_handlers": {},
                             "editorType": "date-input",
                             "fieldType": "date",
                             "label": "Lmt",
                             "name": "lmt",
-                            "required": false
+                            "required": false,
+                            "uid": "a37d487b-98c4-40fb-9241-83d8f9a39c3e"
                         },
-                        {
+                        "1": {
+                            "_events": {
+                                "change": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ],
+                                "get": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            "_handlers": {},
                             "editorType": "date-input",
                             "fieldType": "date",
                             "label": "Ect",
                             "name": "ect",
-                            "required": false
-                        }
-                    ],
+                            "required": false,
+                            "uid": "97aae0ab-240d-4eaa-8abc-fdb1ef1b8fe7"
+                        },
+                        "_events": {
+                            "change": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ],
+                            "get": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        "length": 2
+                    },
                     "label": "Kmd",
                     "name": "_kmd",
                     "required": false
@@ -109,6 +224,13 @@
                     "fieldType": "string",
                     "label": "Type",
                     "name": "type",
+                    "required": false
+                },
+                {
+                    "editorType": "text-input",
+                    "fieldType": "boolean",
+                    "label": "Approved",
+                    "name": "status",
                     "required": false
                 }
             ],

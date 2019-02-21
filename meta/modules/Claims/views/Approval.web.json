@@ -214,6 +214,38 @@
             "format": "",
             "sortable": true,
             "title": "Type"
+        },
+        {
+            "componentOptions": {
+                "annotations": {
+                    "id": "componentIdentifier"
+                },
+                "debounce": 0,
+                "defaultValue": "",
+                "events": {
+                    "onChange": ""
+                },
+                "id": "ctl8",
+                "model": "",
+                "name": "status",
+                "placeholder": "",
+                "schemaVersion": "1.0",
+                "title": "Approved",
+                "type": "text-box",
+                "uniqueID": "5856230a-2b03-43f4-9ae0-b70139389d52",
+                "validation": {
+                    "required": false
+                }
+            },
+            "editable": true,
+            "encoded": true,
+            "field": "status",
+            "filterable": true,
+            "format": "",
+            "sortable": true,
+            "template": "<ng-template kendoGridCellTemplate let-dataItem>\n    <input type=\"checkbox\" [checked]=\"dataItem.status\">\n</ng-template>",
+            "title": "Approved",
+            "width": 30
         }
     ],
     "customSections": {

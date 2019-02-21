@@ -11,4 +11,5 @@ export class Claim {
     public description: string;
     public policynumber: string;
     public type: string;
+    public status: boolean;
 }

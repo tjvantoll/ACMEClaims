@@ -111,7 +111,8 @@
             "vehicle": "Vehicle",
             "description": "Description",
             "policynumber": "Policy Number",
-            "type": "Type"
+            "type": "Type",
+            "status": "Approved"
           },
           "editMessages": {
             "cancel": "Cancel changes",
@@ -139,6 +140,9 @@
               "placeholder": ""
             },
             "ctl7": {
+              "placeholder": ""
+            },
+            "ctl8": {
               "placeholder": ""
             }
           }

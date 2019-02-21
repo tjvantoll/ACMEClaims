@@ -78,15 +78,25 @@ Do not edit!!!
                             </ks-text-box>
                         </ng-template>
                     </kendo-grid-column>
-                    <kendo-grid-command-column [width]="grid.config.commandColumnWidth">
-                        <ng-template kendoGridCellTemplate>
-                            <button kendoGridEditCommand><span class="k-icon k-i-edit"></span>{{ 'modules.Claims.views.Approval.editMessages.edit' | translate }}</button>
-                            <button kendoGridSaveCommand><span class="k-icon k-i-checkmark"></span>{{ 'modules.Claims.views.Approval.editMessages.update' | translate }}</button>
-                            <button kendoGridCancelCommand><span class="k-icon k-i-cancel"></span>{{ 'modules.Claims.views.Approval.editMessages.canceledit' | translate }}</button>
-                            <button kendoGridRemoveCommand><span class="k-icon k-i-close"></span>{{ 'modules.Claims.views.Approval.editMessages.destroy' | translate }}</button>
+                    <kendo-grid-column [field]="'status'" [filterable]="true" [filter]="'boolean'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.status' | translate"
+                        [width]="30">
+                        <ng-template kendoGridCellTemplate let-dataItem>
+                            <input type="checkbox" [checked]="dataItem.status">
                         </ng-template>
-                    </kendo-grid-command-column>
-                    </kendo-grid>
+                        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                            <ks-text-box [config]="$config.components.ctl8" [id]="'ctl8'" [(model)]="grid.editDataModel.status" [viewFormArray]="grid.viewFormArray">
+                            </ks-text-box>
+                        </ng-template>
+                        </kendo-grid-column>
+                        <kendo-grid-command-column [width]="grid.config.commandColumnWidth">
+                            <ng-template kendoGridCellTemplate>
+                                <button kendoGridEditCommand><span class="k-icon k-i-edit"></span>{{ 'modules.Claims.views.Approval.editMessages.edit' | translate }}</button>
+                                <button kendoGridSaveCommand><span class="k-icon k-i-checkmark"></span>{{ 'modules.Claims.views.Approval.editMessages.update' | translate }}</button>
+                                <button kendoGridCancelCommand><span class="k-icon k-i-cancel"></span>{{ 'modules.Claims.views.Approval.editMessages.canceledit' | translate }}</button>
+                                <button kendoGridRemoveCommand><span class="k-icon k-i-close"></span>{{ 'modules.Claims.views.Approval.editMessages.destroy' | translate }}</button>
+                            </ng-template>
+                        </kendo-grid-command-column>
+                        </kendo-grid>
             </ks-grid>
         </div>
     </div>

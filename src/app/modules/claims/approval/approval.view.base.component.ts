@@ -116,6 +116,13 @@ export class ApprovalViewBaseComponent implements OnInit, AfterViewInit, OnDestr
                 value: '',
                 title: 'Type',
                 debounce: 0
+            },
+            ctl8: {
+                placeholderKey: 'modules.Claims.views.Approval.components.ctl8.placeholder',
+                name: 'status',
+                value: '',
+                title: 'Approved',
+                debounce: 0
             }
         }
     };
