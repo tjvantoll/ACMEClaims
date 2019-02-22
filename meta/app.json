@@ -22,6 +22,12 @@
             "module": "Claims",
             "type": "tab",
             "view": "Chat"
+        },
+        {
+            "displayName": "Claims",
+            "module": "Claims",
+            "type": "tab",
+            "view": "Claims"
         }
     ],
     "mobileTheme": "light",

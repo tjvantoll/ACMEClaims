@@ -13,11 +13,11 @@
     "name": "login",
     "passwordLabel": "Password",
     "platform": "mobile",
-    "registerLabel": "Register",
+    "registerLabel": "REGISTER",
     "schemaVersion": "1.0",
     "title": "ACME Claims",
     "type": "view",
     "uniqueID": "50b2fb54-ed16-443c-8587-1480b616c163",
-    "usernameLabel": "Username",
+    "usernameLabel": "User",
     "viewType": "mobile-login"
 }

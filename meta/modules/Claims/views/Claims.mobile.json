@@ -1,0 +1,33 @@
+{
+    "actionBar": true,
+    "actionBarNewButton": true,
+    "actionBarNewButtonText": "New",
+    "actionBarTitle": "",
+    "authorization": {
+        "allowedRoles": []
+    },
+    "dataProvider": "DefaultDataProvider",
+    "dataSource": "Claims",
+    "events": {
+        "hideEventHandler": "onHide",
+        "initEventHandler": "onInit",
+        "showEventHandler": "onShow"
+    },
+    "image": "image",
+    "name": "Claims",
+    "navigateOnItemTap": {
+        "parameter": ""
+    },
+    "navigateOnNewTap": {
+        "parameter": ""
+    },
+    "pageSize": 20,
+    "platform": "mobile",
+    "schemaVersion": "1.0",
+    "searchable": false,
+    "swipeable": false,
+    "title": "vehicle",
+    "type": "view",
+    "uniqueID": "1fc10abd-64f6-428f-bc96-1a0176df2d6d",
+    "viewType": "mobile-single-line-image-list-view"
+}
