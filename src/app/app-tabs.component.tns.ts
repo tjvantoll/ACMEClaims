@@ -17,7 +17,8 @@ export class AppTabsComponent implements AfterViewInit {
 
     ngAfterViewInit(): void {
         const outlets = {
-            claimsChatTab: ['claims', 'chat']
+            claimsChatTab: ['claims', 'chat'],
+            claimsClaimsTab: ['claims', 'claims']
         };
 
         this.navigationService.navigate([{ outlets }], { relativeTo: this.activatedRoute });

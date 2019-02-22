@@ -149,6 +149,9 @@
         },
         "Chat": {
           "label": "Chat"
+        },
+        "Claims": {
+          "label": "Claims"
         }
       }
     }

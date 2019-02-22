@@ -1,19 +1,45 @@
 ScrollView {
-    background-color: #656a75;
+    background-color: #2A2932;
     color: white;
-    font-family: 'Nunito-Regular';
 }
 
 .form {
-    border-width: 1;
-    border-color: orange;
+    margin-top: 100;
 }
 
 Label[text="ACME Claims"] {
     color: #FFFFFF;
-    font-size: 28;
+    font-size: 32;
     text-align: center;
-    margin-top: 20;
+    margin-top: 50;
     margin-bottom: 40;
-    font-weight: 300;
+    font-weight: bold;
+}
+
+Label[text="User"], Label[text="Password"] {
+    color: white;
+}
+
+.form StackLayout > TextField {
+    border-width: 0 0 1 0;
+    border-color: #9E9DA1;
+    color: white;
+    padding: 0 0 5 0;
+    text-decoration: none;
+    background-color: transparent;
+    font-weight: 500;
+    margin-bottom: 40;
+}
+
+.-primary {
+    background-color: rgb(89, 152, 255);
+    border-radius: 20;
+    padding: 15 0;
+}
+Label[text="or"] {
+    color: gray;
+}
+.-outline {
+    border-width: 0;
+    color: white;
 }
