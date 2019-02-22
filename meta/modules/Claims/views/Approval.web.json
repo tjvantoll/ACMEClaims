@@ -243,9 +243,8 @@
             "filterable": true,
             "format": "",
             "sortable": true,
-            "template": "<ng-template kendoGridCellTemplate let-dataItem>\n    <input type=\"checkbox\" [checked]=\"dataItem.status\">\n</ng-template>",
-            "title": "Approved",
-            "width": 30
+            "template": "<ng-template kendoGridCellTemplate let-dataItem>\n    <input type=\"checkbox\" [checked]=\"dataItem.status === 'true'\">\n</ng-template>",
+            "title": "Approved"
         }
     ],
     "customSections": {
