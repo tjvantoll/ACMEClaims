@@ -4,6 +4,7 @@
 ///////////////////
 import { Component, ElementRef, Injector, ViewChild } from '@angular/core';
 import { alert, prompt } from 'tns-core-modules/ui/dialogs/dialogs';
+import { isAndroid } from 'tns-core-modules/platform';
 
 import { NavigationService } from '@src/app/core/services/navigation.service';
 import { AuthenticationService } from '@src/app/core/auth/authentication.service';
@@ -35,7 +36,7 @@ export class LoginViewBaseComponent {
     login() {
         this.authenticationService.signIn(this.user).subscribe(
             () => {
-                this.navigationService.goToRoot();
+                this.navigationService.goToRoot(isAndroid ? { animated: false, transition: {} } : {});
             },
             err => {
                 this.alert(`An error occurred: ${err}`);

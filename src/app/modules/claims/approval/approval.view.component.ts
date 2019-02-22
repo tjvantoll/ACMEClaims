@@ -23,7 +23,6 @@ export class ApprovalViewComponent extends ApprovalViewBaseComponent {
         script.type = 'text/javascript';
         script.onload = function() {
             var $ = window.jQuery;
-            //setTimeout(function() { 
 
             var checkGrid = setInterval(function() {
                 if ($(".k-grid-table tr").length > 2) {
@@ -33,11 +32,11 @@ export class ApprovalViewComponent extends ApprovalViewBaseComponent {
                     $('head').append('<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">');
 
                     $('table').find('thead').each(function(){
-                        $(this).find('th').eq(6).after("<th>Recommendation</th>");
+                        $(this).find('th').eq(5).after("<th>Recommendation</th>");
                     });
 
                     $('.k-grid-table').find('tr').each(function(){
-                        $(this).find('td').eq(6).after("<td><button type='button' class='btn-rec k-button'>Recommendation</button></td>");
+                        $(this).find('td').eq(5).after("<td><button type='button' class='btn-rec k-button'>Recommendation</button></td>");
                     });
 
                     $('.btn-rec').click(function(){
@@ -86,11 +85,16 @@ export class ApprovalViewComponent extends ApprovalViewBaseComponent {
                             "</div>" +
                         "</div>");
 
+                    // hack to re-create the recommendation cell when these 3 buttons are clicked
+                    $(document).on('click', '.k-grid-edit-command, .k-grid-save-command, .k-grid-cancel-command', function() {
+                        let rowIndex = $(this).closest('tr').attr("ng-reflect-logical-row-index") - 1;
+                        $('.k-grid-table').find('tr').eq(rowIndex).find('td').eq(5)
+                            .after("<td><button type='button' class='btn-rec k-button'>Recommendation</button></td>");
+                    });
+
                     clearInterval(checkGrid);
                 }
             }, 10);
-
-            //}, 1500);
         };
         document.getElementsByTagName("head")[0].appendChild(script);
     }

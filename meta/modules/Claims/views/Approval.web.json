@@ -135,66 +135,6 @@
                 "events": {
                     "onChange": ""
                 },
-                "id": "ctl5",
-                "model": "",
-                "name": "description",
-                "placeholder": "",
-                "schemaVersion": "1.0",
-                "title": "Description",
-                "type": "text-box",
-                "uniqueID": "f543883b-08df-4c6d-8e06-4db5c65239d7",
-                "validation": {
-                    "required": false
-                }
-            },
-            "editable": true,
-            "encoded": true,
-            "field": "description",
-            "filterable": true,
-            "format": "",
-            "sortable": true,
-            "title": "Description"
-        },
-        {
-            "componentOptions": {
-                "annotations": {
-                    "id": "componentIdentifier"
-                },
-                "debounce": 0,
-                "defaultValue": "",
-                "events": {
-                    "onChange": ""
-                },
-                "id": "ctl6",
-                "model": "",
-                "name": "policynumber",
-                "placeholder": "",
-                "schemaVersion": "1.0",
-                "title": "Policynumber",
-                "type": "text-box",
-                "uniqueID": "98278aab-5b0c-4ef1-9b34-0030a7b05d82",
-                "validation": {
-                    "required": false
-                }
-            },
-            "editable": true,
-            "encoded": true,
-            "field": "policynumber",
-            "filterable": true,
-            "format": "",
-            "sortable": true,
-            "title": "Policy Number"
-        },
-        {
-            "componentOptions": {
-                "annotations": {
-                    "id": "componentIdentifier"
-                },
-                "debounce": 0,
-                "defaultValue": "",
-                "events": {
-                    "onChange": ""
-                },
                 "id": "ctl7",
                 "model": "",
                 "name": "type",

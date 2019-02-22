@@ -109,8 +109,6 @@
             "name": "Name",
             "date": "Date",
             "vehicle": "Vehicle",
-            "description": "Description",
-            "policynumber": "Policy Number",
             "type": "Type",
             "status": "Approved"
           },
@@ -131,12 +129,6 @@
               "placeholder": ""
             },
             "ctl3": {
-              "placeholder": ""
-            },
-            "ctl5": {
-              "placeholder": ""
-            },
-            "ctl6": {
               "placeholder": ""
             },
             "ctl7": {

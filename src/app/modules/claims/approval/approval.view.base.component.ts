@@ -96,20 +96,6 @@ export class ApprovalViewBaseComponent implements OnInit, AfterViewInit, OnDestr
                 title: 'Vehicle',
                 debounce: 0
             },
-            ctl5: {
-                placeholderKey: 'modules.Claims.views.Approval.components.ctl5.placeholder',
-                name: 'description',
-                value: '',
-                title: 'Description',
-                debounce: 0
-            },
-            ctl6: {
-                placeholderKey: 'modules.Claims.views.Approval.components.ctl6.placeholder',
-                name: 'policynumber',
-                value: '',
-                title: 'Policynumber',
-                debounce: 0
-            },
             ctl7: {
                 placeholderKey: 'modules.Claims.views.Approval.components.ctl7.placeholder',
                 name: 'type',

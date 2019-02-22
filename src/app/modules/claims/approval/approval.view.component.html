@@ -60,18 +60,6 @@ Do not edit!!!
                             </ks-text-box>
                         </ng-template>
                     </kendo-grid-column>
-                    <kendo-grid-column [field]="'description'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.description' | translate">
-                        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
-                            <ks-text-box [config]="$config.components.ctl5" [id]="'ctl5'" [(model)]="grid.editDataModel.description" [viewFormArray]="grid.viewFormArray">
-                            </ks-text-box>
-                        </ng-template>
-                    </kendo-grid-column>
-                    <kendo-grid-column [field]="'policynumber'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.policynumber' | translate">
-                        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
-                            <ks-text-box [config]="$config.components.ctl6" [id]="'ctl6'" [(model)]="grid.editDataModel.policynumber" [viewFormArray]="grid.viewFormArray">
-                            </ks-text-box>
-                        </ng-template>
-                    </kendo-grid-column>
                     <kendo-grid-column [field]="'type'" [filterable]="true" [filter]="'text'" [sortable]="true" [title]="'modules.Claims.views.Approval.columns.type' | translate">
                         <ng-template kendoGridEditTemplate let-dataItem="dataItem">
                             <ks-text-box [config]="$config.components.ctl7" [id]="'ctl7'" [(model)]="grid.editDataModel.type" [viewFormArray]="grid.viewFormArray">
