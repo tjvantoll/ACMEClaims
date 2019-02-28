@@ -6,9 +6,8 @@ import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'ks-tab-strip',
-    templateUrl: './tab-strip.component.html'
+    templateUrl: './tab-strip.component.html',
 })
 export class KsTabStripComponent {
-    @Input()
-    public id: string;
+    @Input() public id: string;
 }

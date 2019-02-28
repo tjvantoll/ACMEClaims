@@ -20,7 +20,9 @@ export class DataStateService<TState extends CollectionState | DocumentState> {
             this.internalChanges.next(initialState);
         }
 
-        const changesSubscriber = this.changesSubscriber.pipe(switchMap(stateObservable => stateObservable));
+        const changesSubscriber = this.changesSubscriber.pipe(
+            switchMap(stateObservable => stateObservable)
+        );
 
         this.changes = merge(this.internalChanges, changesSubscriber).pipe(
             filter(state => !!state),

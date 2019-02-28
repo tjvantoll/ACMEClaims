@@ -10,37 +10,35 @@ import { KsInputBaseComponent } from '@src/app/shared/components/input.base.comp
     templateUrl: './radio-button-list.component.html',
     styles: [
         `
-            .ks-radio-button-list {
-                min-height: 24px;
-                overflow: auto;
-                padding: 0;
-                list-style: none;
-            }
+        .ks-radio-button-list {
+            min-height: 24px;
+            overflow: auto;
+            padding: 0;
+            list-style: none;
+        }
 
-            .ks-radio-button-list li {
-                padding: 2px;
-            }
+        .ks-radio-button-list li {
+            padding: 2px;
+        }
 
-            .ks-radio-button-list.-horizontal {
-                display: flex;
-                align-items: center;
-            }
+        .ks-radio-button-list.-horizontal {
+            display: flex;
+            align-items: center;
+        }
 
-            .ks-radio-button-list.-horizontal li {
-                white-space: nowrap;
-            }
+        .ks-radio-button-list.-horizontal li {
+            white-space: nowrap;
+        }
 
-            .ks-radio-button-list.-horizontal li + li {
-                margin-left: 10px;
-            }
+        .ks-radio-button-list.-horizontal li + li {
+            margin-left: 10px;
+        }
         `
     ]
 })
 export class KsRadioButtonListComponent extends KsInputBaseComponent implements OnInit {
-    @Input()
-    public name: string;
-    @Input()
-    public data: Array<any>;
+    @Input() public name: string;
+    @Input() public data: Array<any>;
     public style;
 
     public ngOnInit(): void {
@@ -53,8 +51,7 @@ export class KsRadioButtonListComponent extends KsInputBaseComponent implements 
         super.setModel<any>(value);
     }
 
-    @Input()
-    get model(): any {
+    @Input() get model(): any {
         return super.getModel<any>();
     }
 
@@ -85,7 +82,7 @@ export class KsRadioButtonListComponent extends KsInputBaseComponent implements 
         const style = {};
 
         if (this.config.height) {
-            style['height'] = `${this.config.height}px`;
+            style['height'] =  `${this.config.height}px`;
         }
 
         if (this.config.maxHeight) {

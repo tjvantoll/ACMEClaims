@@ -11,7 +11,7 @@ import { Kinvey, InvalidCredentialsError, NoActiveUserError } from 'kinvey-nativ
 
 import { KinveyService } from '@src/app/core/data/kinvey.service';
 import { KinveyServiceConfig } from '@src/app/core/data/kinvey-service-config';
-import { KinveyFileData } from '@src/app/core/data/kinvey-file-data';
+import { KinveyFileData} from '@src/app/core/data/kinvey-file-data';
 import { DataServiceContext } from '@src/app/core/data/data-service-context';
 import { CollectionState } from '@src/app/core/data/state/collection-state.interface';
 import { DocumentState } from '@src/app/core/data/state/document-state.interface';
@@ -34,7 +34,7 @@ export class KinveyCoreDataService {
     private dataReload: { [key: string]: Subject<any> } = {};
     private syncCollection: { [key: string]: Subscription } = {};
 
-    constructor(protected kinvey: KinveyService, private networkMonitoringService: NetworkMonitoringService) {}
+    constructor(protected kinvey: KinveyService, private networkMonitoringService: NetworkMonitoringService) { }
 
     public getAll<T>(context: DataServiceContext<CollectionState>): Observable<ModelDataResult<T> | T[]> {
         console.log('getAll');
@@ -42,14 +42,12 @@ export class KinveyCoreDataService {
         if (context.config.loadOnDemand) {
             return this.getStateObservableWithLoadMore(context).pipe(
                 tap(() => console.log('After getStateObservableWithLoadMore')),
-                flatMap(state =>
-                    this.getQueryObservableWithLoadMore<T>(context, state).pipe(
-                        this.handleObservableError(context),
-                        last(value => !!value),
-                        map(items => ({ items, state }))
-                    )
-                ),
-                scan((oldItems: Kinvey.Entity[], value: { items: Kinvey.Entity[]; state: InternalState }) => {
+                flatMap(state => this.getQueryObservableWithLoadMore<T>(context, state).pipe(
+                    this.handleObservableError(context),
+                    last(value => !!value),
+                    map(items => ({ items, state }))
+                )),
+                scan((oldItems: Kinvey.Entity[], value: { items: Kinvey.Entity[], state: InternalState }) => {
                     if (value.state.loadMorePage) {
                         const uniqueIds = new Set(oldItems.map(item => item._id));
                         return oldItems.concat(value.items.filter(item => !uniqueIds.has(item._id)));
@@ -57,7 +55,7 @@ export class KinveyCoreDataService {
 
                     return value.items;
                 }, []),
-                map(items => (items as any[]) as T[]),
+                map(items => items as any[] as T[]),
                 tap(() => console.log('After getQueryObservableWithLoadMore')),
                 shareReplay(1)
             );
@@ -70,17 +68,20 @@ export class KinveyCoreDataService {
     }
 
     public get<T>(context: DataServiceContext<DocumentState>): Observable<T> {
-        const documentObservable = state =>
-            from(
-                // To be removed when kinvey sdk depends on rxjs v6
-                this.getDataStoreCollection(context.config).findById(state.id, context.config.requestOptions)
-            ).pipe(
-                this.handleObservableError(context),
-                last(value => !!value),
-                map(item => (item as any) as T)
-            );
+        const documentObservable = state => from( // To be removed when kinvey sdk depends on rxjs v6
+            this.getDataStoreCollection(context.config).findById(state.id, context.config.requestOptions)
+        ).pipe(
+            this.handleObservableError(context),
+            last(value => !!value),
+            map(item => item as any as T)
+        );
 
-        return merge(this.getDataReload(context.config).pipe(withLatestFrom(context.stateChanges)), context.stateChanges).pipe(
+        return merge(
+            this.getDataReload(context.config).pipe(
+                withLatestFrom(context.stateChanges),
+            ),
+            context.stateChanges
+        ).pipe(
             flatMap(state => documentObservable(state)),
             shareReplay(1)
         );
@@ -95,8 +96,8 @@ export class KinveyCoreDataService {
         return this.networkMonitoringService.isOnline
             ? savePromise
             : Promise.resolve().then(() => {
-                  setTimeout(() => this.refresh(context), 200);
-              });
+                setTimeout(() => this.refresh(context), 200);
+            });
     }
 
     public remove<T>(context: DataServiceContext<CollectionState | DocumentState>, item: T) {
@@ -165,7 +166,9 @@ export class KinveyCoreDataService {
                 withLatestFrom(context.stateChanges),
                 map(([_, state]) => new InternalState(state))
             ),
-            context.stateChanges.pipe(map(state => new InternalState(state)))
+            context.stateChanges.pipe(
+                map(state => new InternalState(state))
+            )
         );
     }
 
@@ -180,7 +183,9 @@ export class KinveyCoreDataService {
                 withLatestFrom(context.stateChanges),
                 map(([_, state]) => new InternalState(state, 1))
             ),
-            context.stateChanges.pipe(map(state => new InternalState(state)))
+            context.stateChanges.pipe(
+                map(state => new InternalState(state))
+            )
         ).pipe(
             tap(() => console.log('merged: getStateObservableWithLoadMore')),
             pairwise(),
@@ -191,7 +196,7 @@ export class KinveyCoreDataService {
 
                 return newState;
             }),
-            tap(() => console.log('last: getStateObservableWithLoadMore'))
+            tap(() => console.log('last: getStateObservableWithLoadMore')),
         );
     }
 
@@ -205,17 +210,15 @@ export class KinveyCoreDataService {
             dataStoreCollection.count(query, context.config.requestOptions)
         ).pipe(
             map(([items, countResult]) => ({
-                data: (items as any[]) as T[],
+                data: items as any[] as T[],
                 total: countResult
             })),
             tap(() => context.isLoading.next(false))
         );
     }
 
-    private getQueryObservableWithLoadMore<T>(
-        context: DataServiceContext<CollectionState>,
-        state: InternalState
-    ): Observable<Array<Kinvey.Entity>> {
+    private getQueryObservableWithLoadMore<T>(context: DataServiceContext<CollectionState>, state: InternalState):
+        Observable<Array<Kinvey.Entity>> {
         context.isLoading.next(true);
         console.log('context.isLoading.next(true);');
         const dataStoreCollection = this.getDataStoreCollection(context.config);

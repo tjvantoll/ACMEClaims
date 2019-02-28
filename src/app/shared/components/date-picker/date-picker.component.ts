@@ -8,9 +8,8 @@ import { DatePickerComponent } from '@progress/kendo-angular-dateinputs';
 
 @Component({
     selector: 'ks-date-picker',
-    templateUrl: './date-picker.component.html'
+    templateUrl: './date-picker.component.html',
 })
 export class KsDatePickerComponent extends KsDateInputBaseComponent {
-    @ViewChild(DatePickerComponent)
-    public datePicker: DatePickerComponent;
+    @ViewChild(DatePickerComponent) public datePicker: DatePickerComponent;
 }

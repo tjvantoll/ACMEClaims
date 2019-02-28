@@ -11,21 +11,17 @@ import { KsInputBaseComponent } from '@src/app/shared/components/input.base.comp
     templateUrl: './auto-complete.component.html',
     styles: [
         `
-            .ks-auto-complete kendo-autocomplete {
-                width: 100%;
-            }
+        .ks-auto-complete kendo-autocomplete {
+            width: 100%;
+        }
         `
     ]
 })
 export class KsAutoCompleteComponent extends KsInputBaseComponent implements OnChanges {
-    @ViewChild('kendoComponent')
-    public kendoComponent: AutoCompleteComponent;
-    @Input()
-    public name: string;
-    @Input()
-    public data: Array<any>;
-    @Output()
-    public filterChange: EventEmitter<string> = new EventEmitter();
+    @ViewChild('kendoComponent') public kendoComponent: AutoCompleteComponent;
+    @Input() public name: string;
+    @Input() public data: Array<any>;
+    @Output() public filterChange: EventEmitter<string> = new EventEmitter();
     public filteredData: Array<any>;
 
     public ngOnChanges(): void {
@@ -36,8 +32,7 @@ export class KsAutoCompleteComponent extends KsInputBaseComponent implements OnC
         super.setModel<any>(value);
     }
 
-    @Input()
-    get model(): any {
+    @Input() get model(): any {
         return super.getModel<any>();
     }
 

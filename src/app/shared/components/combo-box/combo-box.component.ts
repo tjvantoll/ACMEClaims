@@ -12,29 +12,24 @@ import { FormGroup } from '@angular/forms';
     templateUrl: './combo-box.component.html',
     styles: [
         `
-            .ks-combo-box kendo-combobox {
-                width: 100%;
-            }
+        .ks-combo-box kendo-combobox {
+            width: 100%;
+        }
         `
     ]
 })
 export class KsComboBoxComponent extends KsInputBaseComponent implements OnChanges {
-    @ViewChild('kendoComponent')
-    public kendoComponent: ComboBoxComponent;
-    @Input()
-    public data: Array<any>;
-    @Output()
-    public selectionChange: EventEmitter<any> = new EventEmitter();
-    @Output()
-    public filterChange: EventEmitter<string> = new EventEmitter();
+    @ViewChild('kendoComponent') public kendoComponent: ComboBoxComponent;
+    @Input() public data: Array<any>;
+    @Output() public selectionChange: EventEmitter<any> = new EventEmitter();
+    @Output() public filterChange: EventEmitter<string> = new EventEmitter();
     public filteredData: Array<any>;
 
     public ngOnChanges(): void {
         this.filteredData = this.data;
     }
 
-    @Input()
-    get model(): any {
+    @Input() get model(): any {
         return super.getModel<any>();
     }
 

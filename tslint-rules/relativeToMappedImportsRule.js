@@ -2,24 +2,13 @@
 var __extends = (this && this.__extends) || (function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf ||
-            ({
-                    __proto__: []
-                }
-                instanceof Array && function(d, b) {
-                    d.__proto__ = b;
-                }) ||
-            function(d, b) {
-                for (var p in b)
-                    if (b.hasOwnProperty(p)) d[p] = b[p];
-            };
+            ({ __proto__: [] } instanceof Array && function(d, b) { d.__proto__ = b; }) ||
+            function(d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
     }
     return function(d, b) {
         extendStatics(d, b);
-
-        function __() {
-            this.constructor = d;
-        }
+        function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
@@ -38,7 +27,6 @@ var FAILURE_BODY_INSIDE = 'module path should not contain reference to current o
 var illegalInsideRegex = /(\/|\\)\.\.?\1/;
 var Rule = /** @class */ (function(_super) {
     __extends(Rule, _super);
-
     function Rule() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -58,18 +46,14 @@ var Rule = /** @class */ (function(_super) {
         var mapping = Object.keys(paths)[0].replace('*', '');
         var entries = Object.entries(paths);
         var isMobileMapping = function(path) {
-            return ['tns', 'android', 'ios'].some(function(platform) {
-                return path.includes(platform);
-            });
+            return ['tns', 'android', 'ios'].some(function(platform) { return path.includes(platform); });
         };
-        var isWebMapping = function(path) {
-            return path.includes('web');
-        };
+        var isWebMapping = function(path) { return path.includes('web'); };
         var platformEntry = entries.find(function(entry) {
             var platforms = entry[1];
             if (platforms.some(function(platform) {
-                    return isMobileMapping(platform) || isWebMapping(platform);
-                })) {
+                return isMobileMapping(platform) || isWebMapping(platform);
+            })) {
                 // entry[0] -> @src/*
                 // entry[1] -> [src/*.web, src/*]
                 return true;
@@ -97,8 +81,7 @@ var Rule = /** @class */ (function(_super) {
             minLength: 0,
             maxLength: 1
         },
-        optionsDescription: "One argument may be optionally provided: \n\n' +\n            '* `" + OPTION_ALLOW_SIBLINGS +
-            "` allows relative imports for files in the same or nested folders.",
+        optionsDescription: "One argument may be optionally provided: \n\n' +\n            '* `" + OPTION_ALLOW_SIBLINGS + "` allows relative imports for files in the same or nested folders.",
         typescriptOnly: false,
         issueClass: 'Ignored',
         issueType: 'Warning',
@@ -108,13 +91,9 @@ var Rule = /** @class */ (function(_super) {
     return Rule;
 }(Lint.Rules.TypedRule));
 exports.Rule = Rule;
-
 function walk(ctx) {
     var dirname = path_1.dirname(ctx.sourceFile.fileName);
-    var _a = ctx.options,
-        allowSiblings = _a.allowSiblings,
-        platformRemapFn = _a.platformRemapFn;
-
+    var _a = ctx.options, allowSiblings = _a.allowSiblings, platformRemapFn = _a.platformRemapFn;
     function getValidationErrorBody(expression) {
         if (tsutils.isStringLiteral(expression)) {
             var path = expression.text;
@@ -134,14 +113,14 @@ function walk(ctx) {
         // explicitly return undefined when path is valid or not a literal
         return undefined;
     }
-
     function cb(node) {
         if (tsutils.isExternalModuleReference(node)) {
             var errorBody = getValidationErrorBody(node.expression);
             if (errorBody !== undefined) {
                 ctx.addFailureAt(node.getStart(), node.getWidth(), "External " + errorBody + ": " + node.getText());
             }
-        } else if (tsutils.isImportDeclaration(node)) {
+        }
+        else if (tsutils.isImportDeclaration(node)) {
             var errorBody = getValidationErrorBody(node.moduleSpecifier);
             if (errorBody !== undefined) {
                 var moduleSpecifier = node.moduleSpecifier;

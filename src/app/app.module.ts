@@ -27,8 +27,15 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 const configMeta: NgModule = {
-    providers: [AppConfigService, ...config.providers],
-    declarations: [AppComponent, AppAuthCallbackComponent, ...config.declarations],
+    providers: [
+        AppConfigService,
+        ...config.providers
+    ],
+    declarations: [
+        AppComponent,
+        AppAuthCallbackComponent,
+        ...config.declarations
+    ],
     imports: [
         AppLayoutViewModule,
         BrowserModule,
@@ -36,8 +43,8 @@ const configMeta: NgModule = {
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
-                useFactory: createTranslateLoader,
-                deps: [HttpClient]
+                useFactory: (createTranslateLoader),
+                deps: [ HttpClient ]
             }
         }),
         HttpClientModule,
@@ -48,10 +55,19 @@ const configMeta: NgModule = {
         AppRoutingModule,
         ...config.imports
     ],
-    exports: [...config.exports],
-    entryComponents: [...config.entryComponents],
-    bootstrap: [AppComponent, ...config.bootstrap],
-    schemas: [...config.schemas],
+    exports: [
+        ...config.exports
+    ],
+    entryComponents: [
+        ...config.entryComponents
+    ],
+    bootstrap: [
+        AppComponent,
+        ...config.bootstrap
+    ],
+    schemas: [
+        ...config.schemas
+    ],
     id: config.id,
     jit: config.jit
 };
@@ -59,4 +75,4 @@ const configMeta: NgModule = {
 transformConfig(configMeta);
 
 @NgModule(configMeta)
-export class AppModule {}
+export class AppModule { }

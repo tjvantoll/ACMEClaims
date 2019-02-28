@@ -9,26 +9,21 @@ import { TranslationsProvider } from '@src/app/core/translations.provider';
 
 @Component({
     selector: 'ks-languages-drop-down',
-    templateUrl: './languages-drop-down.component.html'
+    templateUrl: './languages-drop-down.component.html',
 })
 export class KsLanguagesDropDownComponent implements OnInit {
-    @ViewChild(DropDownListComponent)
-    public kendoComponent: DropDownListComponent;
-    @Input()
-    public id: string;
-    @Input()
-    public name: string;
-    @Input()
-    public title: string;
-    @Input()
-    public config: any;
-    @Output()
-    public valueChange: EventEmitter<any> = new EventEmitter();
-    @Output()
-    public selectionChange: EventEmitter<any> = new EventEmitter();
+    @ViewChild(DropDownListComponent) public kendoComponent: DropDownListComponent;
+    @Input() public id: string;
+    @Input() public name: string;
+    @Input() public title: string;
+    @Input() public config: any;
+    @Output() public valueChange: EventEmitter<any> = new EventEmitter();
+    @Output() public selectionChange: EventEmitter<any> = new EventEmitter();
     private languageKey: string;
 
-    public constructor(private translationsProvider: TranslationsProvider, private translateService: TranslateService) {}
+    public constructor(private translationsProvider: TranslationsProvider,
+        private translateService: TranslateService) {
+    }
 
     public ngOnInit(): void {
         this.languageKey = this.translationsProvider.getLanguage();

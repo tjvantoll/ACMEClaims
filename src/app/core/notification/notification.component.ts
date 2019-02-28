@@ -13,24 +13,22 @@ import { Notification } from '@src/app/core/notification/notification';
 @Component({
     selector: 'ks-notification',
     templateUrl: './notification.component.html',
-    styleUrls: ['./notification.component.css'],
+    styleUrls: [
+        './notification.component.css'
+    ],
     animations: [
         trigger('notificationAnimation', [
-            state(
-                'open',
-                style({
-                    opacity: 1,
-                    transform: 'translateX(0)'
-                })
-            ),
+            state('open', style({
+                opacity: 1,
+                transform: 'translateX(0)'
+            })),
             transition('void => open', animate('330ms ease-in')),
             transition('open => void, open => close', animate('330ms ease-out'))
         ])
     ]
 })
 export class NotificationComponent implements OnDestroy {
-    @Input()
-    public notifier: string;
+    @Input() public notifier: string;
     private subscription: Subscription;
     public notifications: any[] = [];
     private isClose = false;

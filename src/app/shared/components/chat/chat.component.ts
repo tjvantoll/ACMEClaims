@@ -9,19 +9,19 @@ import { Component, OnInit, Input } from '@angular/core';
     templateUrl: './chat.component.html'
 })
 export class ChatComponent implements OnInit {
-    @Input()
-    nativeChatConfig: any;
-    scriptSrc = 'https://web-chat.nativechat.com/1.11.0/sdk/nativechat.js';
-    cssSrc = 'https://web-chat.nativechat.com/1.11.0/sdk/nativechat.css';
+    @Input() nativeChatConfig: any;
+    scriptSrc = "https://web-chat.nativechat.com/1.11.0/sdk/nativechat.js";
+    cssSrc = "https://web-chat.nativechat.com/1.11.0/sdk/nativechat.css";
 
     private get nativeChat(): any {
         return window['NativeChat'];
     }
 
     ngOnInit(): void {
-        this.loadBotScript().then(() => {
-            this.nativeChat.load(this.nativeChatConfig);
-        });
+        this.loadBotScript()
+            .then(() => {
+                this.nativeChat.load(this.nativeChatConfig);
+            });
     }
 
     private loadBotScript() {
@@ -33,10 +33,9 @@ export class ChatComponent implements OnInit {
             const script: any = document.createElement('script');
             script.type = 'text/javascript';
             script.src = this.scriptSrc;
-            if (script.readyState) {
-                // IE
+            if (script.readyState) {  // IE
                 script.onreadystatechange = () => {
-                    if (script.readyState === 'loaded' || script.readyState === 'complete') {
+                    if (script.readyState === "loaded" || script.readyState === "complete") {
                         script.onreadystatechange = null;
                         resolve();
                     }

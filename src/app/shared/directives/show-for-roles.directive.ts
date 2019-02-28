@@ -6,15 +6,15 @@ import { Directive, Input, ElementRef, Renderer2, OnInit } from '@angular/core';
 import { AuthorizationService } from '@src/app/core/auth/authorization.service';
 
 @Directive({
-    selector: '[ksShowForRoles]'
+  selector: '[ksShowForRoles]'
 })
 export class ShowForRolesDirective implements OnInit {
-    @Input()
-    public kbShowForRoles: any;
+    @Input() public kbShowForRoles: any;
 
-    constructor(private el: ElementRef, private renderer: Renderer2, private authorizationService: AuthorizationService) {}
+    constructor(private el: ElementRef, private renderer: Renderer2, private authorizationService: AuthorizationService) {
+    }
 
-    public ngOnInit(): void {
+    public ngOnInit(): void  {
         const requiredRoles = JSON.parse(this.kbShowForRoles);
         if (requiredRoles.length && !this.authorizationService.isAuthorizedForRoles(requiredRoles)) {
             this.clearContent();

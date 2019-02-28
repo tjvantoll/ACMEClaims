@@ -7,9 +7,8 @@ import { KsTextBoxBaseComponent } from '@src/app/shared/components/text-box.base
 
 @Component({
     selector: 'ks-text-area',
-    templateUrl: './text-area.component.html'
+    templateUrl: './text-area.component.html',
 })
 export class KsTextAreaComponent extends KsTextBoxBaseComponent {
-    @ViewChild('textArea')
-    public textArea: ElementRef;
+    @ViewChild('textArea') public textArea: ElementRef;
 }

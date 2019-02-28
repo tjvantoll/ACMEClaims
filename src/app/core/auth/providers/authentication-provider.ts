@@ -6,7 +6,7 @@ import { Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpRequest } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { Observable , of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { AuthenticationProviderInterface } from '@src/app/core/auth/authentication-provider.interface';

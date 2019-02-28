@@ -8,11 +8,10 @@ import { KsTextBoxBaseComponent } from '@src/app/shared/components/text-box.base
 
 @Component({
     selector: 'ks-disabled-text-box',
-    templateUrl: './disabled-text-box.component.html'
+    templateUrl: './disabled-text-box.component.html',
 })
 export class KsDisabledTextBoxComponent extends KsTextBoxBaseComponent {
-    @ViewChild('disabledInput')
-    public disabledInput: ElementRef;
+    @ViewChild('disabledInput') public disabledInput: ElementRef;
 
     public shouldValidateComponent(): boolean {
         return false;

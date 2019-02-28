@@ -16,7 +16,7 @@ import { DocumentState } from '@src/app/core/data/state/document-state.interface
 
 @Injectable()
 export class DataServiceFactory {
-    constructor(protected coreDataService: KinveyCoreDataService) {}
+    constructor(protected coreDataService: KinveyCoreDataService) { }
 
     public collectionData<T>(config: KinveyServiceConfig, initialState?: CollectionState): MobileDataService<T, CollectionState> {
         if (initialState) {

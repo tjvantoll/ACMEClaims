@@ -7,7 +7,7 @@ import { KsChartsBaseComponent } from '@src/app/shared/components/charts.base.co
 
 @Component({
     selector: 'ks-line-charts',
-    templateUrl: './line-charts.component.html'
+    templateUrl: './line-charts.component.html',
 })
 export class KsLineChartsComponent extends KsChartsBaseComponent implements OnChanges {
     public categories: Array<any>;

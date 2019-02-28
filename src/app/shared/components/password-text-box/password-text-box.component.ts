@@ -7,9 +7,8 @@ import { KsTextBoxBaseComponent } from '@src/app/shared/components/text-box.base
 
 @Component({
     selector: 'ks-password-text-box',
-    templateUrl: './password-text-box.component.html'
+    templateUrl: './password-text-box.component.html',
 })
 export class KsPasswordTextBoxComponent extends KsTextBoxBaseComponent {
-    @ViewChild('passwordInput')
-    public passwordInput: ElementRef;
+    @ViewChild('passwordInput') public passwordInput: ElementRef;
 }

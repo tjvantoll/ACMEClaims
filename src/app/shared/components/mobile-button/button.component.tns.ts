@@ -3,7 +3,7 @@
 // Do not edit!!!
 ///////////////////
 import { Component, Input } from '@angular/core';
-import { EventData } from 'tns-core-modules/data/observable';
+import { EventData } from "tns-core-modules/data/observable";
 import { NavigationService } from '@src/app/core/services/navigation.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class KSButtonComponent {
     @Input()
     public navigateTo: any;
 
-    constructor(protected navigationService: NavigationService) {}
+    constructor(protected navigationService: NavigationService) { }
 
     public onTap(args: EventData, id: string) {
         if (this.navigateTo && this.navigateTo.module && this.navigateTo.view) {

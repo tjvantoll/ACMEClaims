@@ -20,12 +20,14 @@ export class OidcProvider implements AuthenticationProviderInterface {
 
         this.userState = this.userStream.pipe(
             take(1),
-            concatMap(item => (item ? of(item) : from(this.userManager.getUser())))
+            concatMap(item => item ? of(item) : from(this.userManager.getUser()))
         );
     }
 
     public isAuthenticated(): Observable<boolean> {
-        return this.userState.pipe(map((user: User) => user && !user.expired));
+        return this.userState.pipe(
+            map((user: User) => user && !user.expired)
+        );
     }
 
     public authenticate(): void {
@@ -38,8 +40,7 @@ export class OidcProvider implements AuthenticationProviderInterface {
         return from(this.userManager.signinRedirectCallback()).pipe(
             tap((user: User) => {
                 this.userStream.next(user);
-            })
-        );
+            }));
     }
 
     public authenticateRequest(request: HttpRequest<any>): Observable<HttpRequest<any>> {
@@ -62,8 +63,7 @@ export class OidcProvider implements AuthenticationProviderInterface {
         return from(this.userManager.removeUser()).pipe(
             tap((item: any) => {
                 this.userStream.next(null);
-            })
-        );
+            }));
     }
 
     public supportsRefresh(): boolean {

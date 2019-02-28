@@ -8,23 +8,19 @@ import { FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'ks-boolean-radio-button-list',
-    templateUrl: './boolean-radio-button-list.component.html'
+    templateUrl: './boolean-radio-button-list.component.html',
 })
 export class KsBooleanRadioButtonListComponent extends KsInputBaseComponent {
-    @ViewChild('trueRadioButton')
-    public trueRadioButton: ElementRef;
-    @ViewChild('falseRadioButton')
-    public falseRadioButton: ElementRef;
+    @ViewChild('trueRadioButton') public trueRadioButton: ElementRef;
+    @ViewChild('falseRadioButton') public falseRadioButton: ElementRef;
 
-    @Output()
-    public modelChange: EventEmitter<boolean> = new EventEmitter();
+    @Output() public modelChange: EventEmitter<boolean> = new EventEmitter();
 
     set model(value: boolean) {
         super.setModel<boolean>(value);
     }
 
-    @Input()
-    get model(): boolean {
+    @Input() get model(): boolean {
         return super.getModel<boolean>();
     }
 

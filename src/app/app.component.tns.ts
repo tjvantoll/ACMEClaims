@@ -9,11 +9,16 @@ import { NavigationService } from '@src/app/core/services/navigation.service';
 import { SideDrawerService } from '@src/app/core/services/side-drawer.service';
 
 @Component({
-    templateUrl: 'app.component.html'
+    templateUrl: 'app.component.html',
+    styleUrls: ['app.custom.tns.css']
 })
 export class AppComponent implements AfterViewInit {
     @ViewChild(RadSideDrawerComponent)
     public drawerComponent: RadSideDrawerComponent;
+
+    get user() {
+        return this.authenticationService.activeUser;
+    }
 
     get sideDrawerGesturesEnabled(): boolean {
         return this.sideDrawerService.isEnabled;

@@ -8,11 +8,10 @@ import { CustomValidators } from '@src/app/shared/components/custom-validators';
 
 @Component({
     selector: 'ks-email-text-box',
-    templateUrl: './email-text-box.component.html'
+    templateUrl: './email-text-box.component.html',
 })
 export class KsEmailTextBoxComponent extends KsTextBoxBaseComponent {
-    @ViewChild('emailInput')
-    public emailInput: ElementRef;
+    @ViewChild('emailInput') public emailInput: ElementRef;
 
     public shouldValidateComponent(): boolean {
         return true;

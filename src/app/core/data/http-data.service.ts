@@ -28,7 +28,9 @@ export abstract class HttpDataService<T> extends DataService<T> {
     }
 
     protected fetchData(state: State): Observable<any> {
-        return this.readRequest(state).pipe(map(response => this.parseResponse(response)));
+        return this.readRequest(state).pipe(
+            map(response => this.parseResponse(response))
+        );
     }
 
     protected defineDefaultActions() {
@@ -56,17 +58,17 @@ export abstract class HttpDataService<T> extends DataService<T> {
         options: {
             body?: any;
             headers?:
-                | HttpHeaders
-                | {
-                      [header: string]: string | string[];
-                  };
+            | HttpHeaders
+            | {
+                [header: string]: string | string[];
+            };
             reportProgress?: boolean;
             observe: 'response';
             params?:
-                | HttpParams
-                | {
-                      [param: string]: string | string[];
-                  };
+            | HttpParams
+            | {
+                [param: string]: string | string[];
+            };
             responseType?: 'json';
             withCredentials?: boolean;
         }
@@ -99,7 +101,7 @@ export abstract class HttpDataService<T> extends DataService<T> {
         return `${serviceUri}${resourceUrl}`;
     }
 
-    protected getRequestParams(state: State): { [param: string]: string | string[] } {
+    protected getRequestParams(state: State): { [param: string]: string | string[]; } {
         return {};
     }
 

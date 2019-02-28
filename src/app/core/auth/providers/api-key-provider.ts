@@ -25,7 +25,7 @@ export class ApiKeyProvider extends AuthenticationProvider<ApiKeySession> {
         super(settings, injector);
         this.http = injector.get(HttpClient);
     }
-
+    
     authenticate(): void {
         this.router.navigate(['application', 'api-key']);
     }
@@ -78,6 +78,8 @@ export class ApiKeyProvider extends AuthenticationProvider<ApiKeySession> {
                 return throwError(new Error(`Invalid API Key transport: ${this.settings.transport}`));
         }
 
-        return getRequest.pipe(map(() => ({ apiKey })));
+        return getRequest.pipe(
+            map(() => ({ apiKey }))
+        );
     }
 }

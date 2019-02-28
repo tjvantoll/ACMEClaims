@@ -38,7 +38,7 @@ export function windowFactory(): any {
 
 const configMeta: NgModule = {
     providers: [
-        { provide: 'Window', useFactory: windowFactory },
+        { provide: 'Window',  useFactory: windowFactory },
         DataProviderService,
         KinveyDataServiceFactory,
         InMemoryDataStoreService,
@@ -68,12 +68,25 @@ const configMeta: NgModule = {
         httpInterceptorProviders,
         ...config.providers
     ],
-    declarations: [...config.declarations],
-    imports: [HttpClientModule, ...config.imports],
-    exports: [...config.exports],
-    entryComponents: [...config.entryComponents],
-    bootstrap: [...config.bootstrap],
-    schemas: [...config.schemas],
+    declarations: [
+        ...config.declarations
+    ],
+    imports: [
+        HttpClientModule,
+        ...config.imports
+    ],
+    exports: [
+        ...config.exports
+    ],
+    entryComponents: [
+        ...config.entryComponents
+    ],
+    bootstrap: [
+        ...config.bootstrap
+    ],
+    schemas: [
+        ...config.schemas
+    ],
     id: config.id,
     jit: config.jit
 };
@@ -83,11 +96,7 @@ transformConfig(configMeta);
 @NgModule(configMeta)
 export class CoreModule {
     // A guard preventing CoreModule to be accidentally imported multiple times
-    constructor(
-        @Optional()
-        @SkipSelf()
-        parentModule: CoreModule
-    ) {
+    constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
         if (parentModule) {
             throw new Error('CoreModule is already imported in the AppModule');
         }

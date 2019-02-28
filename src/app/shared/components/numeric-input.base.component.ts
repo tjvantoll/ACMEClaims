@@ -6,15 +6,13 @@ import { Input, EventEmitter, Output } from '@angular/core';
 import { KsInputBaseComponent } from '@src/app/shared/components/input.base.component';
 
 export class KsNumericInputBaseComponent extends KsInputBaseComponent {
-    @Output()
-    public modelChange: EventEmitter<number> = new EventEmitter();
+    @Output() public modelChange: EventEmitter<number> = new EventEmitter();
 
     set model(value: number) {
         super.setModel<number>(value);
     }
 
-    @Input()
-    get model(): number {
+    @Input() get model(): number {
         return super.getModel<number>();
     }
 
@@ -23,7 +21,9 @@ export class KsNumericInputBaseComponent extends KsInputBaseComponent {
     }
 
     public shouldValidateComponent(): boolean {
-        return super.shouldValidateComponent() || this.config.min !== undefined || this.config.max !== undefined;
+        return super.shouldValidateComponent() ||
+            this.config.min !== undefined ||
+            this.config.max !== undefined;
     }
 
     protected getDefaultValidationMessages(): any {

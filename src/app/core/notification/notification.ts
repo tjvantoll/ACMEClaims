@@ -18,5 +18,5 @@ export class Notification {
          * @default 5000ms
          */
         public timeout: number = 5000
-    ) {}
+    ) { }
 }

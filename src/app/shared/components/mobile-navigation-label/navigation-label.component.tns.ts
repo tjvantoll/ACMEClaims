@@ -17,7 +17,7 @@ export class KSNavigationLabelComponent {
     @Input()
     public tapArgs: Array<string>;
 
-    constructor(protected navigationService: NavigationService) {}
+    constructor(protected navigationService: NavigationService) { }
 
     public onItemTap() {
         if (this.tapArgs && this.tapArgs.length) {

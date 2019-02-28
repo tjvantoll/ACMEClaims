@@ -9,6 +9,4 @@ export interface AuthenticationProviderFactoryInterface {
     createAuthProvider(type: string, settings: any): AuthenticationProviderInterface;
 }
 
-export const AUTHENTICATION_PROVIDER_FACTORIES = new InjectionToken<AuthenticationProviderFactoryInterface[]>(
-    'AuthenticationProviderFactories'
-);
+export const AUTHENTICATION_PROVIDER_FACTORIES = new InjectionToken<AuthenticationProviderFactoryInterface[]>('AuthenticationProviderFactories');

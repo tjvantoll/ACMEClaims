@@ -12,27 +12,22 @@ import { CollectionState } from '@src/app/core/data/state/collection-state.inter
 
 @Component({
     selector: 'ks-form',
-    templateUrl: './form.component.html'
+    templateUrl: './form.component.html',
 })
 export class KSFormComponent implements OnInit, OnDestroy {
-    @ViewChild('form')
-    form: ElementRef;
+    @ViewChild('form') form: ElementRef;
 
-    @Input()
-    dataService: MobileDataService<any, CollectionState>;
-    @Input()
-    formGroup: FormGroup;
-    @Input()
-    columns = '';
-    @Input()
-    rows = '';
+    @Input() dataService: MobileDataService<any, CollectionState>;
+    @Input() formGroup: FormGroup;
+    @Input() columns = '';
+    @Input() rows = '';
 
     asyncInputs: Promise<void>[] = [];
     dataChanges: Subscription;
     item: any;
     isSubmitting = false;
 
-    constructor(private routerExtensions: RouterExtensions) {}
+    constructor(private routerExtensions: RouterExtensions) { }
 
     ngOnInit() {
         if (this.isRootForm) {
@@ -79,14 +74,14 @@ export class KSFormComponent implements OnInit, OnDestroy {
         Promise.all(this.asyncInputs)
             .then(() => {
                 if (!this.isValid) {
-                    throw new Error('The form is not valid.');
+                    throw new Error("The form is not valid.")
                 }
             })
             .then(() => this.dataService.save({ ...this.item, ...this.formGroup.value }))
             .then(() => this.routerExtensions.back())
-            .catch(err => {
+            .catch((err) => {
                 this.isSubmitting = false;
-                alert((err && err.message) || 'An error has occurred.');
+                alert(err && err.message || 'An error has occurred.');
             });
     }
 
@@ -102,7 +97,7 @@ export class KSFormComponent implements OnInit, OnDestroy {
         const formValidators = [];
 
         validators.forEach(v => {
-            const validator = this.getValidator(v);
+            const validator = this.getValidator(v)
             if (validator) {
                 formValidators.push(validator);
             }

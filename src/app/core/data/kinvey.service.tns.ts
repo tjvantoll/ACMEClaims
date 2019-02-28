@@ -7,11 +7,7 @@ import { Injectable } from '@angular/core';
 import { Kinvey } from 'kinvey-nativescript-sdk';
 
 import { CollectionState } from '@src/app/core/data/state/collection-state.interface';
-import {
-    CompositeFilterDescriptor,
-    FilterDescriptor,
-    isCompositeFilterDescriptor
-} from '@src/app/core/data/state/filter-descriptor.interface';
+import { CompositeFilterDescriptor, FilterDescriptor, isCompositeFilterDescriptor } from '@src/app/core/data/state/filter-descriptor.interface';
 
 @Injectable()
 export class KinveyService {

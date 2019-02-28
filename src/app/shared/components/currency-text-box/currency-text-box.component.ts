@@ -8,9 +8,8 @@ import { NumericTextBoxComponent } from '@progress/kendo-angular-inputs';
 
 @Component({
     selector: 'ks-currency-text-box',
-    templateUrl: './currency-text-box.component.html'
+    templateUrl: './currency-text-box.component.html',
 })
 export class KsCurrencyTextBoxComponent extends KsNumericInputBaseComponent {
-    @ViewChild('currencyInput')
-    public currencyInput: NumericTextBoxComponent;
+    @ViewChild('currencyInput') public currencyInput: NumericTextBoxComponent;
 }

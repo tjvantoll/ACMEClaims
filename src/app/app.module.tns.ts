@@ -13,13 +13,36 @@ import { SharedModule } from '@src/app/shared/shared.module';
 import { config, transformConfig } from '@src/app/app.config';
 
 const configMeta: NgModule = {
-    providers: [...config.providers],
-    declarations: [AppComponent, AppTabsComponent, ...config.declarations],
-    imports: [SharedModule, NativeScriptModule, AppRoutingModule, CoreModule, CoreModule.forRoot(), ...config.imports],
-    exports: [...config.exports],
-    entryComponents: [...config.entryComponents],
-    bootstrap: [AppComponent, ...config.bootstrap],
-    schemas: [NO_ERRORS_SCHEMA, ...config.schemas],
+    providers: [
+        ...config.providers
+    ],
+    declarations: [
+        AppComponent,
+        AppTabsComponent,
+        ...config.declarations
+    ],
+    imports: [
+        SharedModule,
+        NativeScriptModule,
+        AppRoutingModule,
+        CoreModule,
+        CoreModule.forRoot(),
+        ...config.imports
+    ],
+    exports: [
+        ...config.exports
+    ],
+    entryComponents: [
+        ...config.entryComponents
+    ],
+    bootstrap: [
+        AppComponent,
+        ...config.bootstrap
+    ],
+    schemas: [
+        NO_ERRORS_SCHEMA,
+        ...config.schemas
+    ],
     id: config.id,
     jit: config.jit
 };
@@ -27,4 +50,4 @@ const configMeta: NgModule = {
 transformConfig(configMeta);
 
 @NgModule(configMeta)
-export class AppModule {}
+export class AppModule { }

@@ -2,7 +2,6 @@
 * Auto-generated
 * Do not edit!!!
 */
-
 .k-input,
 .k-textbox,
 .k-numerictextbox,
@@ -13,7 +12,7 @@
     width: 100%;
 }
 
-ks-date-time-picker>span {
+ks-date-time-picker > span {
     display: flex;
 }
 

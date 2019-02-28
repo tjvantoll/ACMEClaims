@@ -8,11 +8,10 @@ import { CustomValidators } from '@src/app/shared/components/custom-validators';
 
 @Component({
     selector: 'ks-url-text-box',
-    templateUrl: './url-text-box.component.html'
+    templateUrl: './url-text-box.component.html',
 })
 export class KsUrlTextBoxComponent extends KsTextBoxBaseComponent {
-    @ViewChild('urlInput')
-    public urlInput: ElementRef;
+    @ViewChild('urlInput') public urlInput: ElementRef;
 
     public shouldValidateComponent(): boolean {
         return true;

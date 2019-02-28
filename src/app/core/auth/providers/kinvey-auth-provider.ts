@@ -29,11 +29,11 @@ export class KinveyAuthProvider extends AuthenticationProvider<User> {
     }
 
     signOut(): Observable<void> {
-        return this.http
-            .post(`${this.settings.serviceUri}/user/${this.settings.appKey}/_logout`, null, {
-                headers: { Authorization: `Kinvey ${this.session.authToken}` }
-            })
-            .pipe(switchMap(() => super.signOut()));
+        return this.http.post(`${this.settings.serviceUri}/user/${this.settings.appKey}/_logout`, null, {
+            headers: { 'Authorization': `Kinvey ${this.session.authToken}` }
+        }).pipe(
+            switchMap(() => super.signOut())
+        );
     }
 
     protected getAuthenticatedRequest(request: HttpRequest<any>): HttpRequest<any> {
@@ -50,16 +50,14 @@ export class KinveyAuthProvider extends AuthenticationProvider<User> {
 
         const header = btoa(this.settings.appKey + ':' + this.settings.appSecret);
 
-        return this.http
-            .post(`${this.settings.serviceUri}/user/${this.settings.appKey}/login`, body, {
-                headers: { Authorization: `Basic ${header}` }
-            })
-            .pipe(
-                map((kinveySession: any) => ({
-                    userName: kinveySession.username,
-                    authToken: kinveySession._kmd.authtoken,
-                    kinveySession
-                }))
-            );
+        return this.http.post(`${this.settings.serviceUri}/user/${this.settings.appKey}/login`, body, {
+            headers: { 'Authorization': `Basic ${header}` }
+        }).pipe(
+            map((kinveySession: any) => ({
+                userName: kinveySession.username,
+                authToken: kinveySession._kmd.authtoken,
+                kinveySession
+            }))
+        );
     }
 }

@@ -10,12 +10,7 @@ import { catchError, concatMap, tap } from 'rxjs/operators';
 import { process, State } from '@progress/kendo-data-query';
 
 import { ModelDataResult } from '@src/app/core/data/model-data-result';
-import {
-    DataServiceInterface,
-    DataServiceAction,
-    DataServiceActionType,
-    DataServiceActionDef
-} from '@src/app/core/data/data-service.interface';
+import { DataServiceInterface, DataServiceAction, DataServiceActionType, DataServiceActionDef } from '@src/app/core/data/data-service.interface';
 import { DataServiceConfig } from '@src/app/core/data/data-service-config';
 import { DataServiceEvent, DataServiceEventState } from '@src/app/core/data/data-service.event';
 
@@ -106,7 +101,7 @@ export abstract class DataService<T> implements DataServiceInterface<T> {
                         action: actionType,
                         state: DataServiceEventState.done
                     });
-
+        
                     if (actionDef.refetchData) {
                         this.reset();
                         this.read(this.state);
@@ -117,7 +112,7 @@ export abstract class DataService<T> implements DataServiceInterface<T> {
                         action: actionType,
                         state: DataServiceEventState.failed
                     });
-
+        
                     this.handleError(err);
                 }
             );
@@ -184,12 +179,11 @@ export abstract class DataService<T> implements DataServiceInterface<T> {
 
     private defineBatchAction() {
         this.defineAction(DataServiceAction.batch, {
-            action: changes =>
-                concat(
-                    this.executeBatchByActionType(DataServiceAction.remove, changes.deletedItems),
-                    this.executeBatchByActionType(DataServiceAction.update, changes.updatedItems),
-                    this.executeBatchByActionType(DataServiceAction.create, changes.createdItems)
-                ),
+            action: changes => concat(
+                this.executeBatchByActionType(DataServiceAction.remove, changes.deletedItems),
+                this.executeBatchByActionType(DataServiceAction.update, changes.updatedItems),
+                this.executeBatchByActionType(DataServiceAction.create, changes.createdItems)
+            ),
             refetchData: true
         });
     }

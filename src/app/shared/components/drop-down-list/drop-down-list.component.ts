@@ -12,19 +12,16 @@ import { FormGroup } from '@angular/forms';
     templateUrl: './drop-down-list.component.html',
     styles: [
         `
-            .ks-drop-down-list kendo-dropdownlist {
-                width: 100%;
-            }
+        .ks-drop-down-list kendo-dropdownlist {
+            width: 100%;
+        }
         `
     ]
 })
 export class KsDropDownListComponent extends KsInputBaseComponent implements OnInit {
-    @ViewChild('kendoComponent')
-    public kendoComponent: DropDownListComponent;
-    @Input()
-    public data: Array<any>;
-    @Output()
-    public selectionChange: any = new EventEmitter();
+    @ViewChild('kendoComponent') public kendoComponent: DropDownListComponent;
+    @Input() public data: Array<any>;
+    @Output() public selectionChange: any = new EventEmitter();
     public defaultItem: any;
 
     public ngOnInit(): void {
@@ -32,8 +29,7 @@ export class KsDropDownListComponent extends KsInputBaseComponent implements OnI
         this.initDefaultItem();
     }
 
-    @Input()
-    get model(): any {
+    @Input() get model(): any {
         return super.getModel<any>();
     }
 
@@ -52,7 +48,7 @@ export class KsDropDownListComponent extends KsInputBaseComponent implements OnI
     }
 
     private initDefaultItem(): void {
-        if (this.config.optionLabel) {
+        if(this.config.optionLabel) {
             this.defaultItem = {};
             this.defaultItem[this.config.valueField] = null;
             this.defaultItem[this.config.textField] = this.config.optionLabel;

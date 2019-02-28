@@ -9,7 +9,8 @@ const KEY = 'USER_ROLES';
 
 @Injectable()
 export class RoleService {
-    constructor(private storageService: LocalStorageService) {}
+    constructor(private storageService: LocalStorageService) {
+    }
 
     getRoles(): string[] {
         return this.storageService.getItem(KEY);

@@ -7,7 +7,7 @@ import { KsChartsBaseComponent } from '@src/app/shared/components/charts.base.co
 
 @Component({
     selector: 'ks-area-charts',
-    templateUrl: './area-charts.component.html'
+    templateUrl: './area-charts.component.html',
 })
 export class KsAreaChartsComponent extends KsChartsBaseComponent implements OnChanges {
     public categories: Array<any>;

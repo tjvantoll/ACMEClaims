@@ -11,4 +11,4 @@ export class KinveyServiceConfig extends DataServiceConfig {
     public requestOptions?: Kinvey.RequestOptions;
     public pageSize?: number;
     public loadOnDemand?: boolean;
-}
+  }

@@ -5,16 +5,14 @@
 import { Input, EventEmitter, Output } from '@angular/core';
 import { KsInputBaseComponent } from '@src/app/shared/components/input.base.component';
 
-export abstract class KsDateInputBaseComponent extends KsInputBaseComponent {
-    @Output()
-    public modelChange: EventEmitter<Date> = new EventEmitter();
+export abstract class KsDateInputBaseComponent extends KsInputBaseComponent  {
+    @Output() public modelChange: EventEmitter<Date> = new EventEmitter();
 
     set model(value: Date) {
         super.setModel<Date>(value);
     }
 
-    @Input()
-    get model(): Date {
+    @Input() get model(): Date {
         return super.getModel<Date>();
     }
 
@@ -24,7 +22,9 @@ export abstract class KsDateInputBaseComponent extends KsInputBaseComponent {
     }
 
     public shouldValidateComponent(): boolean {
-        return super.shouldValidateComponent() || this.config.min !== undefined || this.config.max !== undefined;
+        return super.shouldValidateComponent() ||
+            this.config.min !== undefined ||
+            this.config.max !== undefined;
     }
 
     protected getDefaultValidationMessages(): any {

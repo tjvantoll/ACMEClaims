@@ -22,22 +22,16 @@ const EDIT_MODE_POPUP = 'Popup';
 
 @Component({
     selector: 'ks-grid',
-    templateUrl: './grid.component.html'
+    templateUrl: './grid.component.html',
 })
 export class KsGridComponent implements OnInit {
-    @ContentChild(GridComponent)
-    public kendoGrid: GridComponent;
+    @ContentChild(GridComponent) public kendoGrid: GridComponent;
 
-    @Input()
-    public config: any;
-    @Input()
-    public state: State = {};
-    @Input()
-    public dataService: DataServiceInterface<any>;
-    @Input()
-    public view: Observable<GridDataResult>;
-    @Input()
-    get model(): any {
+    @Input() public config: any;
+    @Input() public state: State = {};
+    @Input() public dataService: DataServiceInterface<any>;
+    @Input() public view: Observable<GridDataResult>;
+    @Input() get model(): any {
         return this._model;
     }
     set model(value: any) {
@@ -45,18 +39,12 @@ export class KsGridComponent implements OnInit {
         this.modelChange.emit(value);
     }
 
-    @Output()
-    public add: EventEmitter<any> = new EventEmitter();
-    @Output()
-    public edit: EventEmitter<any> = new EventEmitter();
-    @Output()
-    public remove: EventEmitter<any> = new EventEmitter();
-    @Output()
-    public cellClick: EventEmitter<any> = new EventEmitter();
-    @Output()
-    public cellClose: EventEmitter<any> = new EventEmitter();
-    @Output()
-    public modelChange: EventEmitter<any> = new EventEmitter();
+    @Output() public add: EventEmitter<any> = new EventEmitter();
+    @Output() public edit: EventEmitter<any> = new EventEmitter();
+    @Output() public remove: EventEmitter<any> = new EventEmitter();
+    @Output() public cellClick: EventEmitter<any> = new EventEmitter();
+    @Output() public cellClose: EventEmitter<any> = new EventEmitter();
+    @Output() public modelChange: EventEmitter<any> = new EventEmitter();
 
     public viewFormArray: FormArray = new FormArray([]);
     public isNew: boolean;
@@ -214,6 +202,7 @@ export class KsGridComponent implements OnInit {
             default:
                 break;
         }
+
     }
 
     public removeHandler(e) {
@@ -270,7 +259,7 @@ export class KsGridComponent implements OnInit {
 
         this.cellClose.emit();
         if (!formGroup.valid) {
-            // prevent closing the edited cell if there are invalid values.
+             // prevent closing the edited cell if there are invalid values.
             args.preventDefault();
         } else if (formGroup.dirty) {
             this.incellEditingService.update(this.editDataModel);
@@ -281,7 +270,10 @@ export class KsGridComponent implements OnInit {
         return this.dialogService.open({
             title: 'Confirm delete',
             content: 'Are you sure you want to delete this record?',
-            actions: [{ text: 'No' }, { text: 'Yes', primary: true }],
+            actions: [
+                { text: 'No' },
+                { text: 'Yes', primary: true }
+            ],
             width: 450,
             height: 200,
             minWidth: 250

@@ -26,7 +26,7 @@ export class KSListViewComponent {
     @ContentChild(RadListViewComponent)
     protected listViewComponent: RadListViewComponent;
 
-    constructor(protected navigationService: NavigationService) {}
+    constructor(protected navigationService: NavigationService) { }
 
     public onItemTap(args: ListViewEventData) {
         if (this.navigateOnItemTap && this.navigateOnItemTap.module && this.navigateOnItemTap.view) {

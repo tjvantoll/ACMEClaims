@@ -7,67 +7,71 @@ import { Observable, of } from 'rxjs';
 import { KinveyAuthProvider } from '@src/app/core/auth/providers/kinvey-auth-provider';
 
 class SignInState {
-    providerIndex: number;
-    returnUrl: string;
-    dataProviders: string[];
+  providerIndex: number;
+  returnUrl: string;
+  dataProviders: string[];
 }
 
 @Injectable()
 export class AuthenticationService {
-    public readonly requireSignIn: boolean;
-    private provider: KinveyAuthProvider;
+  public activeUser;
+  public readonly requireSignIn: boolean;
+  private provider: KinveyAuthProvider;
 
-    constructor(@Inject(Injector) injector: Injector) {
-        this.provider = new KinveyAuthProvider(null, injector);
-    }
+  constructor(@Inject(Injector) injector: Injector) {
+    this.provider = new KinveyAuthProvider(null, injector);
 
-    public isAuthenticated(): Observable<boolean> {
-        return this.provider.isAuthenticated();
-    }
+    KinveyAuthProvider.activeUser.subscribe(v => this.activeUser = v && v.data);
+  }
 
-    public authenticate(returnUrl?: string): void {
-        this.provider.authenticate();
-    }
+  public isAuthenticated(): Observable<boolean> {
+    return this.provider.isAuthenticated();
+  }
 
-    public authenticateDataProvider(dataProvider: string) {}
+  public authenticate(returnUrl?: string): void {
+    this.provider.authenticate();
+  }
 
-    public completeAuthentication(): Observable<any> {
-        return of(null);
-    }
+  public authenticateDataProvider(dataProvider: string) {
+  }
 
-    public authenticateRequest(dataProvider: string, request: any): Observable<any> {
-        return of(null);
-    }
+  public completeAuthentication(): Observable<any> {
+    return of(null);
+  }
 
-    public signIn(credentials: any): Observable<void> {
-        return this.provider.signIn(credentials);
-    }
+  public authenticateRequest(dataProvider: string, request: any): Observable<any> {
+    return of(null);
+  }
 
-    public signInExternal(redirectUri?: string, authorizationGrant?: any, options?: any): Observable<any> {
-        return this.provider.signInExternal(redirectUri, authorizationGrant, options);
-    }
+  public signIn(credentials: any): Observable<void> {
+    return this.provider.signIn(credentials);
+  }
 
-    public signOut(): Observable<void> {
-        return this.provider.signOut();
-    }
+  public signInExternal(redirectUri?: string, authorizationGrant?: any, options?: any): Observable<any> {
+    return this.provider.signInExternal(redirectUri, authorizationGrant, options);
+  }
 
-    public signUp(credentials: any): Observable<void> {
-        return this.provider.signUp(credentials);
-    }
+  public signOut(): Observable<void> {
+    return this.provider.signOut();
+  }
 
-    public resetPassword(email: string, options?: any): Observable<void> {
-        return this.provider.resetPassword(email, options);
-    }
+  public signUp(credentials: any): Observable<void> {
+    return this.provider.signUp(credentials);
+  }
 
-    public supportsRefresh(dataProvider: string): boolean {
-        return false;
-    }
+  public resetPassword(email: string, options?: any): Observable<void> {
+    return this.provider.resetPassword(email, options);
+  }
 
-    public silentRefresh(dataProvider: string): Observable<any> {
-        return of(null);
-    }
+  public supportsRefresh(dataProvider: string): boolean {
+    return false;
+  }
 
-    public getSigninState(): SignInState {
-        return null;
-    }
+  public silentRefresh(dataProvider: string): Observable<any> {
+    return of(null);
+  }
+
+  public getSigninState(): SignInState {
+    return null;
+  }
 }

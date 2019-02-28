@@ -9,14 +9,14 @@ import { AuthenticationService } from '@src/app/core/auth/authentication.service
 
 @Component({
     selector: 'ks-user-drop-down',
-    templateUrl: './user-drop-down.component.html'
+    templateUrl: './user-drop-down.component.html',
 })
 export class KsUserDropDownComponent implements OnInit {
     public hasAuthProviders: boolean;
     public showSignOut = false;
     private canShowSignOut = false;
 
-    constructor(private router: Router, private authenticationService: AuthenticationService) {
+    constructor (private router: Router, private authenticationService: AuthenticationService) {
         this.hasAuthProviders = this.authenticationService.requireSignIn;
         this.showSignOut = false;
     }

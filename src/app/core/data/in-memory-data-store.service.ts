@@ -9,7 +9,7 @@ import { Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 export class InMemoryCollection {
-    constructor(private dataRef: any) {}
+    constructor(private dataRef: any) { }
 
     public read(): any {
         return JSON.parse(JSON.stringify(this.dataRef));
@@ -20,7 +20,7 @@ export class InMemoryCollection {
 export class InMemoryDataStoreService {
     private store;
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) { }
 
     public getCollection(owner: string, name: string): Observable<InMemoryCollection> {
         return this.getStore().pipe(

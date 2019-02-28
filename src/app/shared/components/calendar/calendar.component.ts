@@ -8,9 +8,8 @@ import { CalendarComponent } from '@progress/kendo-angular-dateinputs';
 
 @Component({
     selector: 'ks-calendar',
-    templateUrl: './calendar.component.html'
+    templateUrl: './calendar.component.html',
 })
 export class KsCalendarComponent extends KsDateInputBaseComponent {
-    @ViewChild('calendar')
-    public calendar: CalendarComponent;
+    @ViewChild('calendar') public calendar: CalendarComponent;
 }

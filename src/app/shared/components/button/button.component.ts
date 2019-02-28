@@ -6,12 +6,10 @@ import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
     selector: 'ks-button',
-    templateUrl: './button.component.html'
+    templateUrl: './button.component.html',
 })
 export class KsButtonComponent {
-    @ViewChild('button')
-    public button: ElementRef;
+    @ViewChild('button') public button: ElementRef;
 
-    @Input()
-    public config: any;
+    @Input() public config: any;
 }

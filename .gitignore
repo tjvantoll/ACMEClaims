@@ -4,3 +4,4 @@
 /platforms
 /src/**/*.js
 .DS_Store
+!/src/assets/service-worker.js

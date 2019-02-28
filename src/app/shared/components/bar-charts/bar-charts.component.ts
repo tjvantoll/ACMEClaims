@@ -7,9 +7,9 @@ import { KsChartsBaseComponent } from '@src/app/shared/components/charts.base.co
 
 @Component({
     selector: 'ks-bar-charts',
-    templateUrl: './bar-charts.component.html'
+    templateUrl: './bar-charts.component.html',
 })
-export class KsBarChartsComponent extends KsChartsBaseComponent implements OnChanges {
+export class KsBarChartsComponent extends KsChartsBaseComponent  implements OnChanges {
     public categories: Array<any>;
 
     public ngOnChanges(): void {

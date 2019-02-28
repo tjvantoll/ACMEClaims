@@ -19,10 +19,13 @@ const CULTURE_KEY = 'CULTURE';
 export class TranslationsProvider extends MessageService {
     public readonly localeChanges = new Subject<string>();
 
-    constructor(private storageService: LocalStorageService, private translateService: TranslateService, private intlService: IntlService) {
+    constructor(private storageService: LocalStorageService,
+        private translateService: TranslateService,
+        private intlService: IntlService) {
         super();
 
-        this.translateService.onLangChange.subscribe(event => this.notify());
+        this.translateService.onLangChange
+            .subscribe(event => this.notify());
     }
 
     public get(key: string): string {

@@ -13,9 +13,10 @@ import { IntlService } from '@progress/kendo-angular-intl';
  *   {{ 2 | formatValue:'{0:c}' }}
  *   formats to: $2
 */
-@Pipe({ name: 'formatValue' })
+@Pipe({name: 'formatValue'})
 export class FormatValuePipe implements PipeTransform {
-    constructor(public intl: IntlService) {}
+    constructor(public intl: IntlService) {
+    }
 
     transform(value: any, format: string): string {
         return this.intl.format(format || '{0}', value);

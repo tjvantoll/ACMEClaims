@@ -7,15 +7,11 @@ import { FormGroup, FormArray, AbstractControl, Validators, FormControl } from '
 import { ValidationService } from '@src/app/shared/services/validation.service';
 
 export abstract class KsInputBaseComponent implements OnInit {
-    @Input()
-    public config: any;
-    @Input()
-    public id: string;
-    @Input()
-    public viewFormArray: FormArray;
+    @Input() public config: any;
+    @Input() public id: string;
+    @Input() public viewFormArray: FormArray;
 
-    @Output()
-    public modelChange: any = new EventEmitter();
+    @Output() public modelChange: any = new EventEmitter();
 
     public _errorMessage: string;
     public formGroup: FormGroup;

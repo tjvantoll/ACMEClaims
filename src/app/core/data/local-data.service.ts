@@ -7,14 +7,18 @@ import { map } from 'rxjs/operators';
 
 import { State } from '@progress/kendo-data-query';
 
-import { DataService } from '@src/app/core/data/data.service';
+import { DataService } from "@src/app/core/data/data.service";
 import { LocalDataServiceConfig } from '@src/app/core/data/local-data-service-config';
-import { InMemoryDataStoreService, InMemoryCollection } from '@src/app/core/data/in-memory-data-store.service';
+import { InMemoryDataStoreService, InMemoryCollection } from "@src/app/core/data/in-memory-data-store.service";
 
 export class LocalDataService<T> extends DataService<T> {
     protected collection: InMemoryCollection;
 
-    constructor(protected config: LocalDataServiceConfig, private dataStore: InMemoryDataStoreService, state: State) {
+    constructor(
+        protected config: LocalDataServiceConfig,
+        private dataStore: InMemoryDataStoreService,
+        state: State
+    ) {
         super(config, state);
     }
 

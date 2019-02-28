@@ -64,11 +64,11 @@ export class ActionBarControllerDirective implements OnInit {
 
         if (isAndroid) {
             btn = new NavigationButton();
-            btn.android.systemIcon = 'ic_menu_moreoverflow_normal_holo_dark';
+            btn.icon = 'res://menu';
             actionBar.navigationButton = btn;
         } else {
             btn = new ActionItem();
-            btn.text = String.fromCharCode(0x2630);
+            btn.icon = 'res://navigation/menu';
             btn.ios.position = 'left';
             actionBar.actionItems.addItem(btn);
         }

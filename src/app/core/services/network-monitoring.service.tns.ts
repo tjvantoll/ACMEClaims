@@ -2,9 +2,9 @@
 // Auto-generated
 // Do not edit!!!
 ///////////////////
-import { Injectable, NgZone } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import * as Connectivity from 'tns-core-modules/connectivity';
+import { Injectable, NgZone } from "@angular/core";
+import { BehaviorSubject, Observable } from "rxjs";
+import * as Connectivity from "tns-core-modules/connectivity";
 
 @Injectable()
 export class NetworkMonitoringService {
@@ -29,6 +29,7 @@ export class NetworkMonitoringService {
     }
 
     private getOnlineStatus(connectionType: number): boolean {
-        return connectionType === Connectivity.connectionType.wifi || connectionType === Connectivity.connectionType.mobile;
+        return connectionType === Connectivity.connectionType.wifi
+            || connectionType === Connectivity.connectionType.mobile;
     }
 }

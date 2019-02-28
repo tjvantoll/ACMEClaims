@@ -3,6 +3,7 @@
     "compilerOptions": {
         "module": "es2015",
         "moduleResolution": "node",
+        "skipLibCheck": true,
         "paths": {
             "@src/*": [
                 "src/*.android.ts",
@@ -14,6 +15,7 @@
     },
     "files": [
         "main.tns.ts",
+        "reference.d.ts",
         "app/modules/application/application.module.tns.ts", "app/modules/claims/claims.module.tns.ts"
     ]
 }

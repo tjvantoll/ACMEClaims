@@ -6,13 +6,15 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SessionStorageService {
-    public setItem(key: string, value: any): void {}
+  public setItem(key: string, value: any): void {
+  }
 
-    public getItem(key: string): any {
-        return {
-            providerIndex: 0
-        };
+  public getItem(key: string): any {
+    return {
+      providerIndex: 0
     }
+  }
 
-    public removeItem(key): void {}
+  public removeItem(key): void {
+  }
 }

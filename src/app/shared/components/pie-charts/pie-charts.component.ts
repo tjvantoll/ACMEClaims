@@ -7,6 +7,7 @@ import { KsChartsBaseComponent } from '@src/app/shared/components/charts.base.co
 
 @Component({
     selector: 'ks-pie-charts',
-    templateUrl: './pie-charts.component.html'
+    templateUrl: './pie-charts.component.html',
 })
-export class KsPieChartsComponent extends KsChartsBaseComponent {}
+export class KsPieChartsComponent extends KsChartsBaseComponent {
+}

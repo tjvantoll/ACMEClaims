@@ -21,7 +21,7 @@ export class KinveyDataService<T> extends HttpDataService<T> {
         super(config, http, dataProviderService, state);
     }
 
-    protected getRequestParams(state: State): { [param: string]: string | string[] } {
+    protected getRequestParams(state: State): { [param: string]: string | string[]; } {
         const params = super.getRequestParams(state);
 
         if (typeof state.filter !== 'undefined') {
@@ -61,28 +61,27 @@ export class KinveyDataService<T> extends HttpDataService<T> {
                 params: this.getRequestParams(state),
                 observe: 'response'
             });
-        };
+        }
 
         if (this.config.serverOperations) {
             const url = this.getAbsoluteUrl({ url: `${collectionResource}/_count` });
 
-            return this.request('GET', url, {
-                params: this.getRequestParams({ filter: state.filter }),
-                observe: 'response'
-            }).pipe(
-                switchMap(countResponse =>
-                    doRead().pipe(
-                        map(response =>
-                            response.clone({
+            return this.request('GET', url,
+                {
+                    params: this.getRequestParams({ filter: state.filter }),
+                    observe: 'response'
+                }).pipe(
+                    switchMap(countResponse =>
+                        doRead().pipe(
+                            map(response => response.clone({
                                 body: {
                                     data: response.body,
                                     total: (countResponse.body as any).count
                                 }
-                            })
+                            }))
                         )
                     )
-                )
-            );
+                );
         }
 
         return doRead();
@@ -173,7 +172,7 @@ export class KinveyDataService<T> extends HttpDataService<T> {
 
             case 'neq':
                 value = {
-                    $ne: filter.value
+                    '$ne': filter.value
                 };
                 break;
 
@@ -183,7 +182,7 @@ export class KinveyDataService<T> extends HttpDataService<T> {
 
             case 'isnotnull':
                 value = {
-                    $ne: null
+                    '$ne': null
                 };
                 break;
 
@@ -226,7 +225,7 @@ export class KinveyDataService<T> extends HttpDataService<T> {
 
             case 'isnotempty':
                 value = {
-                    $ne: ''
+                    '$ne': ''
                 };
                 break;
 

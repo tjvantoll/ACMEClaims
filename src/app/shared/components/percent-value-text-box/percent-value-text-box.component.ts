@@ -8,9 +8,8 @@ import { NumericTextBoxComponent } from '@progress/kendo-angular-inputs';
 
 @Component({
     selector: 'ks-percent-value-text-box',
-    templateUrl: './percent-value-text-box.component.html'
+    templateUrl: './percent-value-text-box.component.html',
 })
 export class KsPercentValueTextBoxComponent extends KsNumericInputBaseComponent {
-    @ViewChild('percentValueInput')
-    public percentValueInput: NumericTextBoxComponent;
+    @ViewChild('percentValueInput') public percentValueInput: NumericTextBoxComponent;
 }

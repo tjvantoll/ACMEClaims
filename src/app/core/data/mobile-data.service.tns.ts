@@ -6,7 +6,7 @@ import { Observable, ConnectableObservable, BehaviorSubject, Subject } from 'rxj
 import { first, publish } from 'rxjs/operators';
 
 import { KinveyCoreDataService } from '@src/app/core/data/kinvey-core-data.service';
-import { KinveyFileData } from '@src/app/core/data/kinvey-file-data';
+import { KinveyFileData} from '@src/app/core/data/kinvey-file-data';
 import { DataServiceContext } from '@src/app/core/data/data-service-context';
 import { ModelDataResult } from '@src/app/core/data/model-data-result';
 import { DataStateService } from '@src/app/core/data/state/data-state.service';

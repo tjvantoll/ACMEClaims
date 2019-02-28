@@ -29,8 +29,8 @@ export class KSDateTimePickerComponent implements ControlValueAccessor, OnInit {
     protected timePicker;
 
     private value: Date;
-    private _onChange = (_: any) => {};
-    private _onTouched = () => {};
+    private _onChange = (_: any) => { };
+    private _onTouched = () => { };
     private _date = new Date().toString();
 
     public ngOnInit(): void {

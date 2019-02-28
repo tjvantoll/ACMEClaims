@@ -8,11 +8,14 @@ import { AuthorizationService } from '@src/app/core/auth/authorization.service';
 
 @Injectable()
 export class AuthorizationGuardService implements CanActivate {
-    constructor(private authorizationService: AuthorizationService, private router: Router) {}
+    constructor(
+        private authorizationService: AuthorizationService,
+        private router: Router) {
+    }
 
     canActivate(route: ActivatedRouteSnapshot): boolean {
         if (!route.data) {
-            return true;
+            return  true;
         }
 
         const isAuthorized = this.authorizationService.isAuthorized(route.data.authorization);

@@ -5,11 +5,13 @@
 import { Component, EventEmitter, Output, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
+
 import { takePicture, requestPermissions } from 'nativescript-camera';
 import { ImageAsset } from 'tns-core-modules/image-asset';
 import { fromAsset, ImageSource } from 'tns-core-modules/image-source';
 import { knownFolders, path, File } from 'tns-core-modules/file-system';
 import * as imagepicker from 'nativescript-imagepicker';
+
 
 import { MobileDataService } from '@src/app/core/data/mobile-data.service';
 import { CollectionState } from '@src/app/core/data/state/collection-state.interface';
@@ -17,26 +19,22 @@ import { CollectionState } from '@src/app/core/data/state/collection-state.inter
 @Component({
     selector: 'ks-take-picture',
     templateUrl: './take-picture.component.html',
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => KSTakePictureComponent),
-            multi: true
-        }
-    ]
+    providers: [{
+        provide: NG_VALUE_ACCESSOR,
+        useExisting: forwardRef(() => KSTakePictureComponent),
+        multi: true,
+    }]
 })
 export class KSTakePictureComponent implements ControlValueAccessor {
-    @Input()
-    dataService: MobileDataService<any, CollectionState>;
-    @Output()
-    registerAsyncInput = new EventEmitter<Promise<void>>();
+    @Input() dataService: MobileDataService<any, CollectionState>;
+    @Output() registerAsyncInput = new EventEmitter<Promise<void>>();
 
     public value: any;
     public picture: ImageAsset;
     public picturePromise: Promise<any> = Promise.resolve();
 
-    private _onChange = (_: any) => {};
-    private _onTouched = () => {};
+    private _onChange = (_: any) => { };
+    private _onTouched = () => { };
 
     writeValue(obj: any): void {
         this.value = obj;
@@ -53,7 +51,8 @@ export class KSTakePictureComponent implements ControlValueAccessor {
     takePicture() {
         requestPermissions().then(
             () => {
-                this.picturePromise = takePicture().then((imageAsset: ImageAsset) => this.saveToDataStore(imageAsset));
+                this.picturePromise = takePicture()
+                    .then((imageAsset: ImageAsset) => this.saveToDataStore(imageAsset));
 
                 this.registerAsyncInput.emit(this.picturePromise);
             },
@@ -63,10 +62,9 @@ export class KSTakePictureComponent implements ControlValueAccessor {
 
     selectPicture() {
         const context = imagepicker.create({ mode: 'single' });
-        this.picturePromise = context
-            .authorize()
+        this.picturePromise = context.authorize()
             .then(() => context.present())
-            .then(selection => selection[0] && this.saveToDataStore(selection[0]));
+            .then((selection) => selection[0] && this.saveToDataStore(selection[0]));
 
         this.registerAsyncInput.emit(this.picturePromise);
     }

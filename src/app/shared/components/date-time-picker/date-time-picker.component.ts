@@ -8,11 +8,9 @@ import { DatePickerComponent, TimePickerComponent } from '@progress/kendo-angula
 
 @Component({
     selector: 'ks-date-time-picker',
-    templateUrl: './date-time-picker.component.html'
+    templateUrl: './date-time-picker.component.html',
 })
 export class KsDateTimePickerComponent extends KsDateInputBaseComponent {
-    @ViewChild(DatePickerComponent)
-    public datePicker: DatePickerComponent;
-    @ViewChild(TimePickerComponent)
-    public timePicker: TimePickerComponent;
+    @ViewChild(DatePickerComponent) public datePicker: DatePickerComponent;
+    @ViewChild(TimePickerComponent) public timePicker: TimePickerComponent;
 }

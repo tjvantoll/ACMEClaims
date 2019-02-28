@@ -5,12 +5,13 @@
 import { AbstractControl } from '@angular/forms';
 
 export class CustomValidators {
+
     public static mailFormat(control: AbstractControl): ValidationResult {
         const EMAIL_REGEXP: RegExp = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
 
         if (control.value !== '' && !EMAIL_REGEXP.test(control.value)) {
             return {
-                incorrectMail: true
+                'incorrectMail': true
             };
         }
 
@@ -22,7 +23,7 @@ export class CustomValidators {
 
         if (control.value !== '' && !URL_REGEXP.test(control.value)) {
             return {
-                invalidUrl: true
+                'invalidUrl': true
             };
         }
 

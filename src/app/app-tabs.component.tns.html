@@ -2,7 +2,7 @@
 Auto-generated
 Do not edit!!!
 -->
-<TabView androidTabsPosition="bottom" class="fa">
+<TabView #tabView androidTabsPosition="bottom" class="fa" (loaded)="onLoaded()">
     <page-router-outlet *tabItem="{ title: 'Chat', textTransform: 'none' }" name="claimsChatTab"></page-router-outlet>
     <page-router-outlet *tabItem="{ title: 'Claims', textTransform: 'none' }" name="claimsClaimsTab"></page-router-outlet>
 </TabView>

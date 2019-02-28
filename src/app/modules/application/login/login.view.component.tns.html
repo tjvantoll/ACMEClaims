@@ -2,28 +2,23 @@
 Auto-generated
 Do not edit!!!
 -->
-
 <ScrollView>
-    <GridLayout ksHideNavBar>
-        <ScrollView>
-            <FlexboxLayout class="form">
-                <StackLayout>
-                    <Label text="ACME Claims"></Label>
+    <GridLayout ksHideNavBar class="form">
+        <StackLayout>
+            <Label text="ACME Claims"></Label>
 
-                    <Label text="User"></Label>
-                    <TextField #username autocorrect="false" autocapitalizationType="none" [(ngModel)]="user.username" returnKeyType="next" (returnPress)="focusPassword()"></TextField>
-                    <GridLayout columns="*, auto" height="24">
-                        <Label text="Password"></Label>
-                        <Label *ngIf="isLoggingIn" col="1" text="Forgot your password?" class="form__link" (tap)="forgotPassword()"></Label>
-                    </GridLayout>
-                    <TextField #password secure="true" [(ngModel)]="user.password" returnKeyType="done" (returnPress)="focusConfirmPassword()"></TextField>
+            <Label text="User"></Label>
+            <TextField #username autocorrect="false" autocapitalizationType="none" [(ngModel)]="user.username" returnKeyType="next" (returnPress)="focusPassword()"></TextField>
+            <GridLayout columns="*, auto" height="24">
+                <Label text="Password"></Label>
+                <Label *ngIf="isLoggingIn" col="1" text="Forgot your password?" class="form__link" (tap)="forgotPassword()"></Label>
+            </GridLayout>
+            <TextField #password secure="true" [(ngModel)]="user.password" returnKeyType="done" (returnPress)="focusConfirmPassword()"></TextField>
 
-                    <Button text="Log in" (tap)="submit()" class="-primary"></Button>
-                    <Label text="or" horizontalAlignment="center" class="form__button-separator"></Label>
-                    <Button text="REGISTER" (tap)="navigateToRegister()" class="-outline"></Button>
+            <Button text="Log in" (tap)="submit()" class="-primary"></Button>
+            <Label text="or" horizontalAlignment="center" class="form__button-separator"></Label>
+            <Button text="REGISTER" (tap)="navigateToRegister()" class="-outline"></Button>
 
-                </StackLayout>
-            </FlexboxLayout>
-        </ScrollView>
+        </StackLayout>
     </GridLayout>
 </ScrollView>

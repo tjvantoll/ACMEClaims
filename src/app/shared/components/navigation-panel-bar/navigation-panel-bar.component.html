@@ -10,7 +10,8 @@ Do not edit!!!
                 {{module.titleKey | translate}}
             </span>
         </ng-template>
-        <kendo-panelbar-item *ngFor="let child of module.children" [title]="child.titleKey | translate" [routerLink]="child.routerLink" [selected]="child.routerLink == router.url">
+        <kendo-panelbar-item *ngFor="let child of module.children" [title]="child.titleKey | translate" [routerLink]="child.routerLink"
+            [selected]="child.routerLink == router.url">
         </kendo-panelbar-item>
     </kendo-panelbar-item>
 </kendo-panelbar>

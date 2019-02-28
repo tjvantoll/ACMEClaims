@@ -13,17 +13,13 @@ import { camelCase } from 'lodash';
 
 @Component({
     selector: 'ks-navigation-panel-bar',
-    templateUrl: './navigation-panel-bar.component.html'
+    templateUrl: './navigation-panel-bar.component.html',
 })
 export class KsNavigationPanelBarComponent implements OnInit, OnDestroy {
-    @Input()
-    public config: any;
-    @Input()
-    public id: string;
-    @Input()
-    public navigationData: any;
-    @ViewChild('nav')
-    public nav: PanelBarComponent;
+    @Input() public config: any;
+    @Input() public id: string;
+    @Input() public navigationData: any;
+    @ViewChild('nav') public nav: PanelBarComponent;
 
     private screenMd = 1024;
     private isMobile: Observable<boolean>;
@@ -31,19 +27,19 @@ export class KsNavigationPanelBarComponent implements OnInit, OnDestroy {
 
     constructor(public router: Router) {
         const initialWindowWidth = of(window.innerWidth < this.screenMd);
-        const currentWindowWidth = fromEvent(window, 'resize').pipe(
-            map((event: any) => {
-                return event.target.innerWidth < this.screenMd;
-            })
-        );
+        const currentWindowWidth = fromEvent(window, 'resize').pipe(map((event: any) => {
+            return event.target.innerWidth < this.screenMd;
+        }));
 
-        this.isMobile = merge(initialWindowWidth, currentWindowWidth).pipe(
-            distinctUntilChanged(),
-            filter(v => v === true)
-        );
+        this.isMobile = merge(initialWindowWidth, currentWindowWidth)
+            .pipe(
+                distinctUntilChanged(),
+                filter(v => v === true)
+            );
     }
 
     public stateChange(items: Array<PanelBarItemModel>) {
+
         this.nav.contentChildItems.forEach((item, index) => {
             this.navigationData[index].expanded = item.expanded;
         });
@@ -63,7 +59,7 @@ export class KsNavigationPanelBarComponent implements OnInit, OnDestroy {
         });
 
         this.subscription = this.isMobile.subscribe(() => {
-            this.navigationData.forEach(m => (m.expanded = false));
+            this.navigationData.forEach(m => m.expanded = false);
         });
     }
 

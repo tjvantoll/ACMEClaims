@@ -8,18 +8,16 @@ import { MaskedTextBoxComponent } from '@progress/kendo-angular-inputs';
 
 @Component({
     selector: 'ks-phone-text-box',
-    templateUrl: './phone-text-box.component.html'
+    templateUrl: './phone-text-box.component.html',
 })
 export class KsPhoneTextBoxComponent extends KsInputBaseComponent {
-    @ViewChild('phoneInput')
-    public phoneInput: MaskedTextBoxComponent;
+    @ViewChild('phoneInput') public phoneInput: MaskedTextBoxComponent;
 
     set model(value: string) {
         super.setModel<string>(value);
     }
 
-    @Input()
-    get model(): string {
+    @Input() get model(): string {
         return super.getModel<string>();
     }
 
@@ -28,7 +26,8 @@ export class KsPhoneTextBoxComponent extends KsInputBaseComponent {
     }
 
     public shouldValidateComponent(): boolean {
-        return super.shouldValidateComponent() || this.config.mask !== undefined;
+        return super.shouldValidateComponent() ||
+            this.config.mask !== undefined;
     }
 
     protected getDefaultValidationMessages(): any {

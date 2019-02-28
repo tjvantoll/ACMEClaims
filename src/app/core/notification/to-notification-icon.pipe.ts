@@ -4,7 +4,7 @@
 ///////////////////
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'kbToIcon' })
+@Pipe({name: 'kbToIcon'})
 export class KsToNotificationIconPipe implements PipeTransform {
     public transform(value: string): string {
         const BASE_CLASS = 'k-icon';

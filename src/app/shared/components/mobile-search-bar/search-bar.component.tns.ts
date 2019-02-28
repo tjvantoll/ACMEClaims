@@ -2,7 +2,7 @@
 // Auto-generated
 // Do not edit!!!
 ///////////////////
-import { Component, Input } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 import { isAndroid } from 'tns-core-modules/platform';
 

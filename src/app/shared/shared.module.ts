@@ -89,7 +89,10 @@ import 'hammerjs';
 import { config, transformConfig } from '@src/app/shared/shared.config';
 
 const configMeta: NgModule = {
-    providers: [ValidationService, ...config.providers],
+    providers: [
+        ValidationService,
+        ...config.providers
+    ],
     declarations: [
         KsTextBoxComponent,
         KsDataFormComponent,
@@ -218,9 +221,15 @@ const configMeta: NgModule = {
         ChatComponent,
         ...config.exports
     ],
-    entryComponents: [...config.entryComponents],
-    bootstrap: [...config.bootstrap],
-    schemas: [...config.schemas],
+    entryComponents: [
+        ...config.entryComponents
+    ],
+    bootstrap: [
+        ...config.bootstrap
+    ],
+    schemas: [
+        ...config.schemas
+    ],
     id: config.id,
     jit: config.jit
 };
@@ -228,4 +237,4 @@ const configMeta: NgModule = {
 transformConfig(configMeta);
 
 @NgModule(configMeta)
-export class SharedModule {}
+export class SharedModule { }

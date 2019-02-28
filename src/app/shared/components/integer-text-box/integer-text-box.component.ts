@@ -8,9 +8,8 @@ import { NumericTextBoxComponent } from '@progress/kendo-angular-inputs';
 
 @Component({
     selector: 'ks-integer-text-box',
-    templateUrl: './integer-text-box.component.html'
+    templateUrl: './integer-text-box.component.html',
 })
 export class KsIntegerTextBoxComponent extends KsNumericInputBaseComponent {
-    @ViewChild('integerInput')
-    public integerInput: NumericTextBoxComponent;
+    @ViewChild('integerInput') public integerInput: NumericTextBoxComponent;
 }

@@ -12,40 +12,35 @@ import { DataServiceEventState } from '@src/app/core/data/data-service.event';
 
 @Component({
     selector: 'ks-data-panel',
-    templateUrl: './data-panel.component.html'
+    templateUrl: './data-panel.component.html',
 })
 export class KsDataPanelComponent implements OnInit {
     private _model: any;
 
-    @Input()
-    public config: any;
+    @Input() public config: any;
 
-    @Input()
-    set model(value: any) {
+    @Input() set model(value: any) {
         this._model = value;
         this.editDataModel = { ...this._model };
     }
 
     get model() {
-        return this._model;
+       return this._model;
     }
 
-    @Input()
-    public dataService: DataServiceInterface<any>;
-    @Input()
-    public canEdit: boolean;
+    @Input() public dataService: DataServiceInterface<any>;
+    @Input() public canEdit: boolean;
 
-    @Output()
-    public insert: EventEmitter<any> = new EventEmitter();
-    @Output()
-    public cancel: EventEmitter<any> = new EventEmitter();
+    @Output() public insert: EventEmitter<any> = new EventEmitter();
+    @Output() public cancel: EventEmitter<any> = new EventEmitter();
 
     public viewFormArray: FormArray = new FormArray([]);
     public insertInProcess: boolean;
     public updateInProcess: boolean;
     public editDataModel: any;
 
-    constructor(private dialogService: DialogService, private cdr: ChangeDetectorRef) {}
+    constructor(private dialogService: DialogService, private cdr: ChangeDetectorRef) {
+    }
 
     public ngOnInit(): void {
         this.serviceEventsChanges();
@@ -99,7 +94,10 @@ export class KsDataPanelComponent implements OnInit {
         return this.dialogService.open({
             title: 'Confirm delete',
             content: 'Are you sure you want to delete this record?',
-            actions: [{ text: 'No' }, { text: 'Yes', primary: true }],
+            actions: [
+                { text: 'No' },
+                { text: 'Yes', primary: true }
+            ],
             width: 450,
             height: 200,
             minWidth: 250

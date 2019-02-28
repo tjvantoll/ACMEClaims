@@ -8,9 +8,8 @@ import { TimePickerComponent } from '@progress/kendo-angular-dateinputs';
 
 @Component({
     selector: 'ks-time-picker',
-    templateUrl: './time-picker.component.html'
+    templateUrl: './time-picker.component.html',
 })
 export class KsTimePickerComponent extends KsDateInputBaseComponent {
-    @ViewChild(TimePickerComponent)
-    public timePicker: TimePickerComponent;
+    @ViewChild(TimePickerComponent) public timePicker: TimePickerComponent;
 }

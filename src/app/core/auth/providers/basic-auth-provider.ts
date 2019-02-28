@@ -17,7 +17,7 @@ class User {
 
 export class BasicAuthProvider extends AuthenticationProvider<User> {
     protected http: HttpClient;
-
+    
     protected get sessionKey(): string {
         return 'basic.auth.' + this.settings.sessionKey;
     }
@@ -34,15 +34,15 @@ export class BasicAuthProvider extends AuthenticationProvider<User> {
     }
 
     protected signInRequest(credentials: any): Observable<any> {
-        const { userName, password } = credentials;
+        const {userName, password} = credentials;
 
         const header = btoa(userName + ':' + password);
 
-        return this.http
-            .get(this.settings.serviceUri, {
-                responseType: 'text',
-                headers: { Authorization: `Basic ${header}` }
-            })
-            .pipe(map(() => ({ userName, header })));
+        return this.http.get(this.settings.serviceUri, {
+            responseType: 'text',
+            headers: { 'Authorization': `Basic ${header}` }
+        }).pipe(
+            map(() => ({ userName, header }))
+        );
     }
 }

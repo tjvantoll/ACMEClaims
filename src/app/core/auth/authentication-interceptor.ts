@@ -13,7 +13,7 @@ import { DATA_PROVIDER_HEADER } from '@src/app/core/constants';
 
 @Injectable()
 export class AuthenticationInterceptor implements HttpInterceptor {
-    constructor(private authenticationService: AuthenticationService) {}
+    constructor(private authenticationService: AuthenticationService) { }
 
     public intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const dataProvider = request.headers.get(DATA_PROVIDER_HEADER);

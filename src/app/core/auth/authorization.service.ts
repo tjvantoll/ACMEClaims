@@ -7,7 +7,8 @@ import { RoleService } from '@src/app/core/auth/role.service';
 
 @Injectable()
 export class AuthorizationService {
-    constructor(private roleService: RoleService) {}
+    constructor(private roleService: RoleService) {
+    }
 
     public isAuthorized(authorization): boolean {
         if (authorization && authorization.allowedRoles && authorization.allowedRoles.length) {

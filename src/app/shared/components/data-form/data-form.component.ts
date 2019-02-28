@@ -7,16 +7,14 @@ import { FormArray } from '@angular/forms';
 
 @Component({
     selector: 'ks-data-form',
-    templateUrl: './data-form.component.html'
+    templateUrl: './data-form.component.html',
 })
 export class KsDataFormComponent {
     private _model: any;
 
-    @Input()
-    public viewFormArray: FormArray;
+    @Input() public viewFormArray: FormArray;
 
-    @Input()
-    set model(value: any) {
+    @Input() set model(value: any) {
         this._model = value;
     }
 }

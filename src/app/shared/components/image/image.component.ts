@@ -7,16 +7,12 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
     selector: 'ks-image',
-    templateUrl: './image.component.html'
+    templateUrl: './image.component.html',
 })
 export class KsImageComponent {
-    @ViewChild('imageElement')
-    public imageElement: ElementRef;
+    @ViewChild('imageElement') public imageElement: ElementRef;
 
-    @Input()
-    public config: any;
-    @Input()
-    public id: string;
-    @Input()
-    public src: string;
+    @Input() public config: any;
+    @Input() public id: string;
+    @Input() public src: string;
 }
