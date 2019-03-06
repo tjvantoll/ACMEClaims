@@ -39,7 +39,7 @@ export class AppTabsComponent implements AfterViewInit {
             tabBar.itemPositioning = UITabBarItemPositioning.Centered;
 
             for (let i = 0; i < controllers.count; i++) {
-                controllers[i].tabBarItem.titlePositionAdjustment = { vertical: -10 };
+                controllers[i].tabBarItem.titlePositionAdjustment = { vertical: -16 };
             }
         }
     }

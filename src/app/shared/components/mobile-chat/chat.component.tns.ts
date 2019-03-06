@@ -17,9 +17,11 @@ export class ChatComponent {
     constructor(private page: Page) {
         if (app.android) {
             this.page.once("loaded", () => {
-                const window = app.android.startActivity.getWindow();
+                const window = app.android.startActivity && app.android.startActivity.getWindow();
                 // fix the issue where the keyboard on Android overlaps the view
-                window.setSoftInputMode(global.android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+                if (window) {
+                    window.setSoftInputMode(global.android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+                }
             });
         }
 
