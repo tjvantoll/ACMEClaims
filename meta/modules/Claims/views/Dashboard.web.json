@@ -21,7 +21,7 @@
             "forAttribute": "",
             "id": "label0",
             "schemaVersion": "1.0",
-            "text": "Dashboard",
+            "text": "Claim Information Dashboard",
             "type": "label",
             "uniqueID": "aa02d239-4c13-406f-9353-6971665a8f47"
         },
@@ -50,8 +50,8 @@
             "schemaVersion": "1.0",
             "series": [
                 {
-                    "categoryField": "count",
-                    "field": "type",
+                    "categoryField": "type",
+                    "field": "count",
                     "labels": {},
                     "name": "item1",
                     "startAngle": 90
@@ -72,6 +72,71 @@
             },
             "type": "pie-charts",
             "uniqueID": "49d593ae-1809-419b-aa69-20bc15b9d817"
+        },
+        {
+            "annotationRefs": {
+                "dataSourceName": {
+                    "kind": "dataSourceName",
+                    "value": "a072f050-5f18-428c-94cd-5353252b9563.ClaimStatus"
+                }
+            },
+            "annotations": {
+                "id": "componentIdentifier"
+            },
+            "categoryAxis": {
+                "field": "type",
+                "labels": {
+                    "format": "{0}",
+                    "rotation": {
+                        "angle": 0
+                    }
+                }
+            },
+            "containerUid": "17dec2cd-50dc-4039-9cba-35fa18545384",
+            "dataSourceName": "ClaimStatus",
+            "events": {
+                "onSeriesClick": ""
+            },
+            "id": "barcharts0",
+            "legend": {
+                "background": "white",
+                "position": "Top",
+                "visible": true
+            },
+            "model": "",
+            "schemaVersion": "1.0",
+            "series": [
+                {
+                    "field": "count",
+                    "labels": {},
+                    "name": "Claim Status"
+                }
+            ],
+            "seriesDefaults": {
+                "labels": {
+                    "visible": false
+                },
+                "typeChart": "Bar"
+            },
+            "title": {
+                "text": ""
+            },
+            "tooltip": {
+                "visible": false
+            },
+            "type": "bar-charts",
+            "uniqueID": "01b5242d-ceaa-4348-b3f7-84193024ff80",
+            "valueAxis": {
+                "labels": {
+                    "format": "{0}",
+                    "rotation": {
+                        "angle": 0
+                    }
+                },
+                "line": {
+                    "visible": true
+                }
+            }
         }
     ],
     "classList": "",
@@ -94,6 +159,14 @@
             "name": "ClaimType",
             "pageSize": 20,
             "uniqueID": "53c1ff88-7b99-496e-aa33-44e0a1bf92a0"
+        },
+        {
+            "batch": true,
+            "dataProviderName": "DefaultDataProvider",
+            "dataSourceName": "ClaimStatus",
+            "name": "ClaimStatus",
+            "pageSize": 20,
+            "uniqueID": "a072f050-5f18-428c-94cd-5353252b9563"
         }
     ],
     "events": {
@@ -133,7 +206,7 @@
                     },
                     "boxStyles": {
                         "margin": "",
-                        "padding": "",
+                        "padding": "initial initial initial 120px",
                         "size": {
                             "height": "",
                             "width": ""
@@ -153,6 +226,37 @@
                     "schemaVersion": "1.0",
                     "type": "col",
                     "uniqueID": "ce0d3cdf-99a0-416f-ae1d-d9615eecce6b"
+                },
+                {
+                    "appearanceStyles": {
+                        "backgroundColor": null,
+                        "color": null
+                    },
+                    "authorization": {
+                        "allowedRoles": []
+                    },
+                    "boxStyles": {
+                        "margin": "",
+                        "padding": "",
+                        "size": {
+                            "height": "",
+                            "width": ""
+                        }
+                    },
+                    "breakpoints": {
+                        "sm": 6
+                    },
+                    "classList": "",
+                    "hidden": {
+                        "lg": false,
+                        "md": false,
+                        "sm": false,
+                        "xs": false
+                    },
+                    "rows": [],
+                    "schemaVersion": "1.0",
+                    "type": "col",
+                    "uniqueID": "2889b177-d589-4026-b013-3e4270988758"
                 }
             ],
             "schemaVersion": "1.0",

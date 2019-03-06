@@ -15,8 +15,10 @@ import { DataServiceFactory } from '@src/app/core/data/data-service-factory';
 import { KinveyDataServiceFactory } from '@src/app/core/data/kinvey-data-service-factory';
 import { Claim } from '@src/app/data/claim.model';
 import { ClaimType } from '@src/app/data/claim-type.model';
+import { ClaimStatus } from '@src/app/data/claim-status.model';
 import { getClaimConfig } from '@src/app/data/claim.config';
 import { getClaimTypeConfig } from '@src/app/data/claim-type.config';
+import { getClaimStatusConfig } from '@src/app/data/claim-status.config';
 
 import { NotificationService } from '@src/app/core/notification/notification.service';
 import { Notification } from '@src/app/core/notification/notification';
@@ -40,12 +42,17 @@ export class DashboardViewBaseComponent implements OnInit, AfterViewInit, OnDest
         ClaimType: {
             skip: 0,
             take: 20
+        },
+        ClaimStatus: {
+            skip: 0,
+            take: 20
         }
     };
 
     public $dataModels: any = {
         ClaimsModel: {},
-        ClaimTypeModel: {}
+        ClaimTypeModel: {},
+        ClaimStatusModel: {}
     };
 
     public $config: any = {
@@ -72,9 +79,57 @@ export class DashboardViewBaseComponent implements OnInit, AfterViewInit, OnDest
                 },
                 series: [
                     {
-                        field: 'type',
-                        categoryField: 'count',
+                        field: 'count',
+                        categoryField: 'type',
                         startAngle: 90,
+                        labels: {}
+                    }
+                ],
+                tooltip: {
+                    format: '',
+                    visible: false
+                }
+            },
+
+            barcharts0: {
+                title: {
+                    textKey: 'modules.Claims.views.Dashboard.components.barcharts0.titleText'
+                },
+                legend: {
+                    visible: true,
+                    background: 'white',
+                    position: 'top'
+                },
+                valueAxis: {
+                    line: {
+                        visible: true
+                    },
+                    labels: {
+                        format: '{0}',
+                        rotation: {
+                            angle: 0
+                        }
+                    }
+                },
+                categoryAxis: {
+                    field: 'type',
+                    labels: {
+                        format: '{0}',
+                        rotation: {
+                            angle: 0
+                        }
+                    }
+                },
+                seriesDefaults: {
+                    type: 'bar',
+                    labels: {
+                        visible: false
+                    }
+                },
+                series: [
+                    {
+                        field: 'count',
+                        name: 'Claim Status',
                         labels: {}
                     }
                 ],
@@ -93,17 +148,23 @@ export class DashboardViewBaseComponent implements OnInit, AfterViewInit, OnDest
         const dsConfig = this.getDataServicesConfig();
         this.$dataServices = {
             Claims: this.$kinveyDataServiceFactory.getService<Claim>(dsConfig['Claims'], this.$dataServicesState['Claims']),
-            ClaimType: this.$kinveyDataServiceFactory.getService<ClaimType>(dsConfig['ClaimType'], this.$dataServicesState['ClaimType'])
+            ClaimType: this.$kinveyDataServiceFactory.getService<ClaimType>(dsConfig['ClaimType'], this.$dataServicesState['ClaimType']),
+            ClaimStatus: this.$kinveyDataServiceFactory.getService<ClaimStatus>(
+                dsConfig['ClaimStatus'],
+                this.$dataServicesState['ClaimStatus']
+            )
         };
 
         this.$dataServicesData = {
             Claims: this.getDataChanges('Claims'),
-            ClaimType: this.getDataChanges('ClaimType')
+            ClaimType: this.getDataChanges('ClaimType'),
+            ClaimStatus: this.getDataChanges('ClaimStatus')
         };
 
         this.$dataServicesResult = {
             Claims: this.getDataResult('Claims'),
-            ClaimType: this.getDataResult('ClaimType')
+            ClaimType: this.getDataResult('ClaimType'),
+            ClaimStatus: this.getDataResult('ClaimStatus')
         };
     }
 
@@ -149,7 +210,8 @@ export class DashboardViewBaseComponent implements OnInit, AfterViewInit, OnDest
     protected getDataServicesConfig() {
         const config = {
             Claims: getClaimConfig(),
-            ClaimType: getClaimTypeConfig()
+            ClaimType: getClaimTypeConfig(),
+            ClaimStatus: getClaimStatusConfig()
         };
 
         return config;

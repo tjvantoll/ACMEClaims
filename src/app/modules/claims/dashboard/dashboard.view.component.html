@@ -10,10 +10,12 @@ Do not edit!!!
     </div>
 
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6" style="padding-left: 120px;">
             <ks-label [config]="$config.components.label0" [id]="'label0'">
             </ks-label>
 
+        </div>
+        <div class="col-sm-6">
         </div>
     </div>
     <div class="row">
@@ -22,6 +24,8 @@ Do not edit!!!
             </ks-pie-charts>
         </div>
         <div class="col-sm-6">
+            <ks-bar-charts [id]="'barcharts0'" [config]="$config.components.barcharts0" [data]="$dataServicesData['ClaimStatus'] | async">
+            </ks-bar-charts>
         </div>
     </div>
 

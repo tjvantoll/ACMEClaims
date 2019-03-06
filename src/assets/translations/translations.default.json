@@ -149,9 +149,12 @@
           "label": "Dashboard",
           "components": {
             "label0": {
-              "text": "Dashboard"
+              "text": "Claim Information Dashboard"
             },
             "piecharts0": {
+              "titleText": ""
+            },
+            "barcharts0": {
               "titleText": ""
             }
           }
