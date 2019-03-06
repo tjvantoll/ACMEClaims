@@ -67,6 +67,15 @@ export class AppLayoutViewBaseComponent implements OnInit, AfterViewInit, OnDest
                     authorization: {
                         allowedRoles: []
                     }
+                },
+                {
+                    title: 'Dashboard',
+                    titleKey: 'modules.Claims.views.Dashboard.label',
+                    label: undefined,
+                    routerLink: '/claims/dashboard',
+                    authorization: {
+                        allowedRoles: []
+                    }
                 }
             ]
         }

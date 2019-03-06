@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ClaimsModuleComponent } from '@src/app/modules/claims/claims.module.component';
 import { ApprovalViewComponent } from '@src/app/modules/claims/approval/approval.view.component';
+import { DashboardViewComponent } from '@src/app/modules/claims/dashboard/dashboard.view.component';
 import { AuthenticationGuardService } from '@src/app/core/auth/authentication-guard.service';
 import { AuthorizationGuardService } from '@src/app/core/auth/authorization-guard.service';
 
@@ -31,6 +32,10 @@ const routes: Routes = [
             {
                 path: 'approval',
                 component: ApprovalViewComponent
+            },
+            {
+                path: 'dashboard',
+                component: DashboardViewComponent
             }
         ]
     },

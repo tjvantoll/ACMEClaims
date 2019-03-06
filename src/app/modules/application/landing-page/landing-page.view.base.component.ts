@@ -32,6 +32,13 @@ export class LandingPageViewBaseComponent implements OnInit, AfterViewInit, OnDe
                     authorization: {
                         allowedRoles: []
                     }
+                },
+                {
+                    name: 'Dashboard',
+                    routerLink: '/claims/dashboard',
+                    authorization: {
+                        allowedRoles: []
+                    }
                 }
             ] as View[]
         }

@@ -1,0 +1,252 @@
+{
+    "annotations": {
+        "dataSources": {
+            "name": "dataSourceName"
+        }
+    },
+    "authorization": {
+        "allowedRoles": []
+    },
+    "children": [
+        {
+            "annotationRefs": {
+                "forAttribute": {
+                    "kind": "componentIdentifier"
+                }
+            },
+            "annotations": {
+                "id": "componentIdentifier"
+            },
+            "containerUid": "ce0d3cdf-99a0-416f-ae1d-d9615eecce6b",
+            "forAttribute": "",
+            "id": "label0",
+            "schemaVersion": "1.0",
+            "text": "Dashboard",
+            "type": "label",
+            "uniqueID": "aa02d239-4c13-406f-9353-6971665a8f47"
+        },
+        {
+            "annotationRefs": {
+                "dataSourceName": {
+                    "kind": "dataSourceName",
+                    "value": "53c1ff88-7b99-496e-aa33-44e0a1bf92a0.ClaimType"
+                }
+            },
+            "annotations": {
+                "id": "componentIdentifier"
+            },
+            "containerUid": "ea205488-53a4-450d-9631-1f29c5d0e6b7",
+            "dataSourceName": "ClaimType",
+            "events": {
+                "onSeriesClick": ""
+            },
+            "id": "piecharts0",
+            "legend": {
+                "background": "white",
+                "position": "Top",
+                "visible": true
+            },
+            "model": "",
+            "schemaVersion": "1.0",
+            "series": [
+                {
+                    "categoryField": "count",
+                    "field": "type",
+                    "labels": {},
+                    "name": "item1",
+                    "startAngle": 90
+                }
+            ],
+            "seriesDefaults": {
+                "labels": {
+                    "background": "white",
+                    "visible": true
+                },
+                "typeChart": "Pie"
+            },
+            "title": {
+                "text": ""
+            },
+            "tooltip": {
+                "visible": false
+            },
+            "type": "pie-charts",
+            "uniqueID": "49d593ae-1809-419b-aa69-20bc15b9d817"
+        }
+    ],
+    "classList": "",
+    "customSections": {
+        "top": "topSection.html"
+    },
+    "dataSources": [
+        {
+            "batch": true,
+            "dataProviderName": "DefaultDataProvider",
+            "dataSourceName": "Claims",
+            "name": "Claims",
+            "pageSize": 20,
+            "uniqueID": "50c5f6cc-5799-4dcb-a58a-f0540af030c6"
+        },
+        {
+            "batch": true,
+            "dataProviderName": "DefaultDataProvider",
+            "dataSourceName": "ClaimType",
+            "name": "ClaimType",
+            "pageSize": 20,
+            "uniqueID": "53c1ff88-7b99-496e-aa33-44e0a1bf92a0"
+        }
+    ],
+    "events": {
+        "hideEventHandler": "onHide",
+        "initEventHandler": "onInit",
+        "showEventHandler": "onShow"
+    },
+    "hidden": false,
+    "name": "Dashboard",
+    "platform": "web",
+    "rows": [
+        {
+            "appearanceStyles": {
+                "backgroundColor": null,
+                "color": null
+            },
+            "authorization": {
+                "allowedRoles": []
+            },
+            "boxStyles": {
+                "margin": "",
+                "padding": "",
+                "size": {
+                    "height": "",
+                    "width": ""
+                }
+            },
+            "classList": "",
+            "cols": [
+                {
+                    "appearanceStyles": {
+                        "backgroundColor": null,
+                        "color": null
+                    },
+                    "authorization": {
+                        "allowedRoles": []
+                    },
+                    "boxStyles": {
+                        "margin": "",
+                        "padding": "",
+                        "size": {
+                            "height": "",
+                            "width": ""
+                        }
+                    },
+                    "breakpoints": {
+                        "sm": 6
+                    },
+                    "classList": "",
+                    "hidden": {
+                        "lg": false,
+                        "md": false,
+                        "sm": false,
+                        "xs": false
+                    },
+                    "rows": [],
+                    "schemaVersion": "1.0",
+                    "type": "col",
+                    "uniqueID": "ce0d3cdf-99a0-416f-ae1d-d9615eecce6b"
+                }
+            ],
+            "schemaVersion": "1.0",
+            "type": "row",
+            "uniqueID": "8ca91f50-fe4f-4c49-be08-fb3b92317831"
+        },
+        {
+            "appearanceStyles": {
+                "backgroundColor": null,
+                "color": null
+            },
+            "authorization": {
+                "allowedRoles": []
+            },
+            "boxStyles": {
+                "margin": "",
+                "padding": "",
+                "size": {
+                    "height": "",
+                    "width": ""
+                }
+            },
+            "classList": "",
+            "cols": [
+                {
+                    "appearanceStyles": {
+                        "backgroundColor": null,
+                        "color": null
+                    },
+                    "authorization": {
+                        "allowedRoles": []
+                    },
+                    "boxStyles": {
+                        "margin": "",
+                        "padding": "",
+                        "size": {
+                            "height": "",
+                            "width": ""
+                        }
+                    },
+                    "breakpoints": {
+                        "sm": 6
+                    },
+                    "classList": "",
+                    "hidden": {
+                        "lg": false,
+                        "md": false,
+                        "sm": false,
+                        "xs": false
+                    },
+                    "rows": [],
+                    "schemaVersion": "1.0",
+                    "type": "col",
+                    "uniqueID": "ea205488-53a4-450d-9631-1f29c5d0e6b7"
+                },
+                {
+                    "appearanceStyles": {
+                        "backgroundColor": null,
+                        "color": null
+                    },
+                    "authorization": {
+                        "allowedRoles": []
+                    },
+                    "boxStyles": {
+                        "margin": "",
+                        "padding": "",
+                        "size": {
+                            "height": "",
+                            "width": ""
+                        }
+                    },
+                    "breakpoints": {
+                        "sm": 6
+                    },
+                    "classList": "",
+                    "hidden": {
+                        "lg": false,
+                        "md": false,
+                        "sm": false,
+                        "xs": false
+                    },
+                    "rows": [],
+                    "schemaVersion": "1.0",
+                    "type": "col",
+                    "uniqueID": "17dec2cd-50dc-4039-9cba-35fa18545384"
+                }
+            ],
+            "schemaVersion": "1.0",
+            "type": "row",
+            "uniqueID": "49c147b6-135b-4878-a933-f277ef3427f6"
+        }
+    ],
+    "schemaVersion": "1.0",
+    "type": "view",
+    "uniqueID": "e6e5f406-1d02-4472-bcd3-a93742f8c0f3",
+    "viewType": "blank"
+}

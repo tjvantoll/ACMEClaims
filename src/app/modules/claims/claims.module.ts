@@ -10,13 +10,23 @@ import { ClaimsModuleComponent } from '@src/app/modules/claims/claims.module.com
 import { ClaimsRoutingModule } from '@src/app/modules/claims/claims-routing.module';
 import { AppLayoutViewModule } from '@src/app/modules/application/app-layout/app-layout.view.module';
 import { ApprovalViewModule } from '@src/app/modules/claims/approval/approval.view.module';
+import { DashboardViewModule } from '@src/app/modules/claims/dashboard/dashboard.view.module';
 
 import { config, transformConfig } from '@src/app/modules/claims/claims.config';
 
 const configMeta: NgModule = {
     providers: [...config.providers],
     declarations: [ClaimsModuleComponent, ...config.declarations],
-    imports: [CommonModule, SharedModule, LayoutModule, AppLayoutViewModule, ApprovalViewModule, ClaimsRoutingModule, ...config.imports],
+    imports: [
+        CommonModule,
+        SharedModule,
+        LayoutModule,
+        AppLayoutViewModule,
+        ApprovalViewModule,
+        DashboardViewModule,
+        ClaimsRoutingModule,
+        ...config.imports
+    ],
     exports: [...config.exports],
     entryComponents: [...config.entryComponents],
     bootstrap: [...config.bootstrap],

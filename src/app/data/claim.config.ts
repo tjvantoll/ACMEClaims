@@ -11,7 +11,9 @@ export function getClaimConfig(): KinveyServiceConfig {
         serverOperations: true,
         createModel: () => new Claim(),
         mapData: dataItem => {
-            dataItem.date = new Date(dataItem.date);
+            if (dataItem.date) {
+                dataItem.date = new Date(dataItem.date);
+            }
 
             return dataItem;
         },

@@ -5,21 +5,14 @@
 import { Kinvey } from 'kinvey-nativescript-sdk';
 
 import { KinveyServiceConfig } from '@src/app/core/data/kinvey-service-config';
-import { Claim } from '@src/app/data/claim.model';
+import { ClaimType } from '@src/app/data/claim-type.model';
 
-export function getClaimConfig(): KinveyServiceConfig {
+export function getClaimTypeConfig(): KinveyServiceConfig {
     return {
         dataProviderName: 'DefaultDataProvider',
         serverOperations: true,
-        createModel: () => new Claim(),
-        mapData: dataItem => {
-            if (dataItem.date) {
-                dataItem.date = new Date(dataItem.date);
-            }
-
-            return dataItem;
-        },
-        collection: 'Claims',
+        createModel: () => new ClaimType(),
+        collection: 'ClaimType',
         dataStoreType: Kinvey.DataStoreType.Cache,
         loadOnDemand: true
     };

@@ -14,6 +14,7 @@ import { AuthenticationService } from '@src/app/core/auth/authentication.service
     styleUrls: ['./login.view.component.css']
 })
 export class LoginViewBaseComponent {
+    isLoading: boolean;
     user: any;
     @ViewChild('username')
     username: ElementRef;
@@ -27,6 +28,7 @@ export class LoginViewBaseComponent {
         this.navigationService = $injector.get(NavigationService);
         this.authenticationService = $injector.get(AuthenticationService);
 
+        this.isLoading = false;
         this.user = {
             username: '',
             password: ''
@@ -34,11 +36,14 @@ export class LoginViewBaseComponent {
     }
 
     login() {
+        this.isLoading = true;
         this.authenticationService.signIn(this.user).subscribe(
             () => {
+                this.isLoading = false;
                 this.navigationService.goToRoot(isAndroid ? { animated: false, transition: {} } : {});
             },
             err => {
+                this.isLoading = false;
                 this.alert(`An error occurred: ${err}`);
             }
         );

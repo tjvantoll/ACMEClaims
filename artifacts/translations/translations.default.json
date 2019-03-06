@@ -144,6 +144,17 @@
         },
         "Claims": {
           "label": "Claims"
+        },
+        "Dashboard": {
+          "label": "Dashboard",
+          "components": {
+            "label0": {
+              "text": "Dashboard"
+            },
+            "piecharts0": {
+              "titleText": ""
+            }
+          }
         }
       }
     }

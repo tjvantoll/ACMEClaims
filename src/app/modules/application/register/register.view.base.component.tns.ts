@@ -16,6 +16,7 @@ import { AuthenticationService } from '@src/app/core/auth/authentication.service
     styleUrls: ['./register.view.component.css']
 })
 export class RegisterViewBaseComponent {
+    isLoading: boolean;
     user: any;
     activatedRoute: ActivatedRoute;
     navigationService: NavigationService;
@@ -31,6 +32,7 @@ export class RegisterViewBaseComponent {
         this.activatedRoute = $injector.get(ActivatedRoute);
         this.navigationService = $injector.get(NavigationService);
         this.authenticationService = $injector.get(AuthenticationService);
+        this.isLoading = false;
         this.user = {
             email: '',
             username: '',
@@ -58,11 +60,14 @@ export class RegisterViewBaseComponent {
             return;
         }
 
+        this.isLoading = true;
         this.authenticationService.signUp(this.user).subscribe(
             () => {
+                this.isLoading = false;
                 this.navigationService.goToRoot(isAndroid ? { animated: false, transition: {} } : {});
             },
             () => {
+                this.isLoading = false;
                 this.alert('An error occurred.');
             }
         );
