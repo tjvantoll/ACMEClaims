@@ -141,7 +141,7 @@
     ],
     "classList": "",
     "customSections": {
-        "top": "topSection.html"
+        "top": "top-section.component.html"
     },
     "dataSources": [
         {

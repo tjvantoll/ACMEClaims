@@ -4,7 +4,6 @@
         "./tslint-rules"
     ],
     "rules": {
-        "relative-to-mapped-imports": true,
         "arrow-return-shorthand": true,
         "callable-types": true,
         "class-name": true,

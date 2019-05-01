@@ -33,11 +33,24 @@
     "mobileTheme": "light",
     "name": "ACMEClaims",
     "ripple": false,
-    "schemaVersion": "1.0.2",
+    "schemaVersion": "1.0.9",
     "startupViewInfo": {},
     "targetFramework": "Angular",
     "theme": "metro",
     "type": "app",
     "uniqueID": "93091c72-6dd9-4814-bfff-50a4b0315a56",
-    "webNavigation": []
+    "webNavigation": [
+        {
+            "moduleName": "Claims",
+            "name": "Approval",
+            "type": "view",
+            "uniqueID": "5fa5bcc2-5ae5-4385-ae18-4c435e127cad"
+        },
+        {
+            "moduleName": "Claims",
+            "name": "Dashboard",
+            "type": "view",
+            "uniqueID": "e6e5f406-1d02-4472-bcd3-a93742f8c0f3"
+        }
+    ]
 }

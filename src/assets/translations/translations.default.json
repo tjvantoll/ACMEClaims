@@ -68,35 +68,6 @@
     }
   },
   "modules": {
-    "Application": {
-      "label": "Application",
-      "description": "The Application Module contains the App Layout, Landing Page, Login, and Unauthorized Page system views",
-      "views": {
-        "app-layout": {
-          "label": "app-layout",
-          "components": {
-            "label0": {
-              "text": "ACME Claims"
-            }
-          }
-        },
-        "home": {
-          "label": "home"
-        },
-        "landing-page": {
-          "label": "landing-page"
-        },
-        "login": {
-          "label": "login"
-        },
-        "register": {
-          "label": "register"
-        },
-        "unauthorized-page": {
-          "label": "unauthorized-page"
-        }
-      }
-    },
     "Claims": {
       "label": "Claims",
       "description": "",
@@ -158,6 +129,35 @@
               "titleText": ""
             }
           }
+        }
+      }
+    },
+    "System": {
+      "label": "System",
+      "description": "The System Module contains the App Layout, Landing Page, Login, and Unauthorized Page system views",
+      "views": {
+        "app-layout": {
+          "label": "app-layout",
+          "components": {
+            "label0": {
+              "text": "ACME Claims"
+            }
+          }
+        },
+        "home": {
+          "label": "home"
+        },
+        "landing-page": {
+          "label": "landing-page"
+        },
+        "login": {
+          "label": "login"
+        },
+        "register": {
+          "label": "register"
+        },
+        "unauthorized-page": {
+          "label": "unauthorized-page"
         }
       }
     }

@@ -188,9 +188,9 @@
         }
     ],
     "customSections": {
-        "bottom": "bottomSection.html",
-        "middle": "middleSection.html",
-        "top": "topSection.html"
+        "bottom": "bottom-section.component.html",
+        "middle": "middle-section.component.html",
+        "top": "top-section.component.html"
     },
     "dataProvider": "DefaultDataProvider",
     "dataSource": "Claims",
